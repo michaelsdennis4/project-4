@@ -9,7 +9,21 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
-  get '/login' => 'welcome#login'
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  delete '/logout', to: 'sessions#destroy'
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+  resources :users
+
+  resources :items do
+    resources :images
+  end
+
+  # add 404 page
 
 
   # Example of regular route:

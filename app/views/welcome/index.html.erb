@@ -6,24 +6,46 @@
 
 <div id="categories">
 
-	<!-- this will be a dynamically-generated list -->
-
 	<h5>Browse by Category</h5>
 
-	<p><a href="">LACE</a></p>
-	<p><a href="">LINENS</a></p>
-	<p><a href="">FANS</a></p>
-	<p><a href="">CLOTHING</a></p>	
-	<p><a href="">SHAWLS</a></p>
-	<p><a href="">CHILDREN'S ITEMS</a></p>	
-	<p><a href="">TEXTILES</a></p>
-	<p><a href="">ACCESSORIES</a></p>	
-	<p><a href="">EARLY ITEMS</a></p>
+	<!-- this will be a dynamically-generated list -->
+	<div id="cat-list">
+		<p><a href="">LACE</a></p>
+		<p><a href="">LINENS</a></p>
+		<p><a href="">FANS</a></p>
+		<p><a href="">CLOTHING</a></p>	
+		<p><a href="">SHAWLS</a></p>
+		<p><a href="">CHILDREN'S ITEMS</a></p>	
+		<p><a href="">TEXTILES</a></p>
+		<p><a href="">ACCESSORIES</a></p>	
+		<p><a href="">EARLY ITEMS</a></p>
+	</div>
 
-	<br>
-	<p>- or -</p>
+</div>
 
-	<h5><a href="">Search by Keywords</a></h5>
+<div id="keywords">
+
+	<h5>Search by Keywords</h5>
+
+	<!-- this will be a dynamically-generated list -->
+
+	<form action="" method="post">
+		<div id="key-list">
+		  <input type="checkbox" name="keyword" value="key"/>17th century<br>
+		  <input type="checkbox" name="keyword" value="key"/> 18th century<br>
+		  <input type="checkbox" name="keyword" value="key"/> Brussels<br>
+		  <input type="checkbox" name="keyword" value="key"/> Chantilly<br>
+		  <input type="checkbox" name="keyword" value="key"/> Needlepoint<br>
+		  <input type="checkbox" name="keyword" value="key"/> Veil<br>
+		  <input type="checkbox" name="keyword" value="key"/> Gown<br>
+		  <input type="checkbox" name="keyword" value="key"/> Wedding<br>
+		  <input type="checkbox" name="keyword" value="key"/> Embroidered<br>
+		  <input type="checkbox" name="keyword" value="key"/> Mother of Pearl<br>
+		 </div>
+	  <input type="submit" value="Search"/>
+	  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+	</form> 
+
 
 </div>
 

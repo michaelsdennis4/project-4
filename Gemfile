@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'annotate', '~> 2.6.6'
+gem 'aws-sdk', '~> 2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

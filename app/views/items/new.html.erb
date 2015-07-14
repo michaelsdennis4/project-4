@@ -1,0 +1,37 @@
+<h1>This is the add new item page</h1>
+
+<!-- add images should be on the edit page - redirect there after create -->
+
+<%= link_to "Add a New Image", "/items/#{@item.id}/images/new" %>
+
+<%= link_to "Temporary Add a New Image", "/images/new" %>
+
+<%= form_for @item, url: {action: "create"} do |f| %>
+	
+	<%= f.label :code, "Code" %>
+	<%= f.text_field :code %><br>
+	<%= f.label :caption, "Caption" %>
+	<%= f.text_field :caption %><br>
+	<%= f.label :condition, "Condition" %>
+	<%= f.text_field :condition %><br>
+	<%= f.label :measurements, "Measurements" %>
+	<%= f.text_field :measurements %><br>
+	<%= f.label :date_acquired, "Date Acquired" %>
+	<%= f.date_field :date_acquired %><br>
+	<%= f.label :date_sold, "Date Sold" %>
+	<%= f.date_field :date_sold %><br>
+	<%= f.label :purchase_price, "Purchase Price" %>
+	<%= f.text_field :purchase_price %><br>
+	<%= f.label :selling_price, "Selling Price" %>
+	<%= f.text_field :selling_price %><br>
+	<%= f.label :description %>
+	<%= f.text_area :description %><br>
+
+	<%= f.radio_button(:is_available, "true") %>
+	<%= f.label(:is_available, "Yes") %>
+	<%= f.radio_button(:is_available, "false") %>
+	<%= f.label(:is_available, "No") %>
+
+	<%= f.submit "Create", html: {class: "button"}  %>
+<% end %>
+

@@ -14,4 +14,6 @@ class Image < ActiveRecord::Base
 
 	belongs_to :item
 
+	dragonfly_accessor :image
+
 end

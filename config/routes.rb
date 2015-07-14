@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :images, only: [:new]
+
   resources :items do
     resources :images
   end

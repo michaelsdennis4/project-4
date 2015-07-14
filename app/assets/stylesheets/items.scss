@@ -1,0 +1,71 @@
+@media (min-width: 770px) {
+
+	body.item {
+		background: none;
+		font-family: 'Cinzel', serif;
+		text-align: center;
+
+		.topnav {
+			font-size: 16px;
+			line-height: 20px;
+			text-align: center;
+
+			a {
+				color: red;
+			};
+
+			a:hover {
+				color: red;
+			};
+
+			a:visited {
+				color: red;
+			};
+		};
+	};
+
+	h1.category {
+		margin-top: 30px;
+		line-height: 50px;
+		font-size: 48px;
+		letter-spacing: 0.2em;
+	};
+
+	.preview {
+		width: 80%;
+		height: 400px;
+		margin-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 10px;
+	}
+
+	.thumb {
+		width: 40%;
+		height: 400px;
+		float: left;
+		margin-right: 40px;
+	};
+
+	.blurb {
+		float: left;
+		width: 50%;
+		height: 400px;
+		text-align: left;
+		oveflow: scroll;
+
+		a {
+			color: red;
+		}
+
+		p {
+			font-size: 18px;
+			font-family: 'Arapey', serif;
+		}
+	};
+
+
+
+};
+
+

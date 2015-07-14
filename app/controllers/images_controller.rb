@@ -6,8 +6,9 @@ class ImagesController < ApplicationController
   end
 
   def new
-   	@item = Item.find(params[:item_id])
-    @image = item.image.new
+   	# @item = Item.find(params[:item_id])
+    # @image = item.image.new
+    @image = Image.new # temporary
   end
 
   def create

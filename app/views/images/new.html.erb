@@ -1,0 +1,14 @@
+<h1>This is the add a new image page</h1>
+
+
+
+<%= form_for @image do |f| %>
+	<%= f.label :caption, "Caption" %>
+	<%= f.text_field :caption %><br>
+
+  <%= f.file_field :image %>
+  
+<% end %>
+
+
+

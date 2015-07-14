@@ -6,16 +6,26 @@
 
 	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items/<%= @item.id %>/edit">BACK TO EDIT ITEM</a></h5>
 
-	<h1>MANAGE IMAGES</h1>
+	<h1 class="headline">IMAGES</h1>
 
-	<h4><%= @item.caption %></h4>
+	<h5>- FOR -</h5>
 
-<!-- 	display all images here -->
+	<h3><%= @item.caption %></h3>
 
 	<%= link_to "Upload New Image", "/items/#{@item.id}/images/new" %>
 
+	<div id="image-container">
 
+			<% @item.images.each do |image| %>
+
+				<div class="image-view"><a href="/images/<%= image.id %>">	
+					<h5><%= image.caption %></h5>	
+					<%= image_tag image.image.thumb('500x400#').url if image.image_stored? %>
+				</a></div>
+
+			<% end %>
+
+	</div>
 
 <% end %>
-
 </body>

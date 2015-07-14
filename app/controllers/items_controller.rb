@@ -18,11 +18,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update
-    item = item.find(params[:id])   
+    item = Item.find(params[:id])   
     if item.update(item_params)
     	redirect_to "/items/#{item.id}" 
     else
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = item.find(params[:id]) 
+    @item = Item.find(params[:id]) 
   end
 
   private

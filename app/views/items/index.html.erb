@@ -15,60 +15,26 @@
 
 <div id="results">
 
-	<div class="preview">
+	<% @items.each do |item| %>
 
-		<a href=""><img class="thumb" src="http://www.marianiforos.com/la225thumb.jpg"/></a>
+		<div class="preview">
 
-		<div class="blurb">
+			<a href="/items/<%= item.id %>"><img class="thumb" src="http://www.marianiforos.com/la225thumb.jpg"/></a> 
 
-			<h4>Antique Lace # LA-225</h4>
+			<div class="blurb">
 
-			<h3><a href="">Majestic Brussels Lace Shawl w/ Point De Gaze Lace</a></h3>
+				<h4><%= item.code %></h4>
 
-			<p>A sumptious shawl! Splendid both in design and workmanship, with a elaborate design of flowing vines, leaves, and flowers. Superbly worked, large oval vignettes contain large three-dimensional roses, some measuring 4 1/2" across. The scale of the design is dramatic, this is the pinnacle of Brussels lace, truly museum quality. Measuring apprx. 123" by 38", 312 cm by almost 97 cm.</p>
+				<h3><a href="/items/<%= item.id %>"><%= item.caption %></a></h3>
 
-		</div>
+				<p><%= item.description %></p>
 
-	</div>
-
-	<div class="preview">
-
-		<a href=""><img class="thumb" src="http://www.marianiforos.com/la225thumb.jpg"/></a>
-
-		<div class="blurb">
-
-			<h4>Antique Lace # LA-225</h4>
-
-			<h3><a href="">Majestic Brussels Lace Shawl w/ Point De Gaze Lace</a></h3>
-
-			<p>A sumptious shawl! Splendid both in design and workmanship, with a elaborate design of flowing vines, leaves, and flowers. Superbly worked, large oval vignettes contain large three-dimensional roses, some measuring 4 1/2" across. The scale of the design is dramatic, this is the pinnacle of Brussels lace, truly museum quality. Measuring apprx. 123" by 38", 312 cm by almost 97 cm.</p>
+			</div>
 
 		</div>
 
-	</div>
-
-	<div class="preview">
-
-		<a href=""><img class="thumb" src="http://www.marianiforos.com/la225thumb.jpg"/></a>
-
-		<div class="blurb">
-
-			<h4>Antique Lace # LA-225</h4>
-
-			<h3><a href="">Majestic Brussels Lace Shawl w/ Point De Gaze Lace</a></h3>
-
-			<p>A sumptious shawl! Splendid both in design and workmanship, with a elaborate design of flowing vines, leaves, and flowers. Superbly worked, large oval vignettes contain large three-dimensional roses, some measuring 4 1/2" across. The scale of the design is dramatic, this is the pinnacle of Brussels lace, truly museum quality. Measuring apprx. 123" by 38", 312 cm by almost 97 cm.</p>
-
-		</div>
-
-	</div>
+	<% end %>
 
 </div>
-
-
-
-
-
-
 </body>
 

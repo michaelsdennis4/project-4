@@ -19,9 +19,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-  # temporary
-  resources :images
-
   resources :items do
     resources :images
   end

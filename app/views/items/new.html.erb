@@ -8,13 +8,7 @@
 
 	<h1 class="headline">NEW ITEM</h1>
 
-	<!-- add images should be on the edit page - redirect there after create -->
-
-	<%= link_to "Add a New Image", "/items/#{@item.id}/images/new" %>
-
-	<%= link_to "Temporary Add a New Image", "/images/new" %>
-
-	<div id="add-item">
+	<div id="item-form">
 
 		<%= form_for @item, url: {action: "create"} do |f| %>
 			
@@ -44,8 +38,7 @@
 			<%= f.label(:is_available, "No", {:class => "short"}) %><br>
 			
 			
-
-			<%= f.submit "Create", {:class => "button"}  %>
+			<div id="submit"><%= f.submit "Create", {:class => "button"}  %></div>
 		<% end %>
 
 	</div>

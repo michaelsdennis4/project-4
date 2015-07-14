@@ -2,19 +2,17 @@ class ImagesController < ApplicationController
 
 	def index
 		@item = Item.find(params[:item_id])
-    @images = @item.image.all
+    @images = @item.images.all
   end
 
   def new
-   	# @item = Item.find(params[:item_id])
-    # @image = item.image.new
-    @image = Image.new # temporary
+   	@item = Item.find(params[:item_id])
+    @image = @item.images.new
   end
 
   def create
-  	# item = Item.find(params[:item_id])
-    # image = item.image.new
-    image = Image.new
+  	item = Item.find(params[:item_id])
+    image = item.images.new
     if image.update(image_params)
       redirect_to "/items/#{item.id}/images/#{image.id}"
     else
@@ -24,13 +22,12 @@ class ImagesController < ApplicationController
 
   def show
   	@item = Item.find(params[:item_id])
-    @image = @item.image.find(params[:id])
+    @image = @item.images.find(params[:id])
   end
 
   def update
-    # item = Item.find(params[:item_id])  
-    # image = item.image.find(params[:id])
-    image = Image.new  
+    item = Item.find(params[:item_id])  
+    image = item.images.find(params[:id])
     if image.update(image_params)
     	redirect_to "/items/#{item.id}/images/#{image.id}" 
     else
@@ -40,13 +37,13 @@ class ImagesController < ApplicationController
 
   def edit
     @item = Item.find(params[:item_id]) 
-    @image = @item.image.find(params[:id])
+    @image = @item.images.find(params[:id])
   end
 
   private
 
   def image_params
-    params.require(:image).permit(:url, :caption, :image)
+    params.require(:image).permit(:image_uid, :caption, :image)
   end
 
 end

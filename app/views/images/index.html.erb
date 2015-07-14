@@ -1,0 +1,21 @@
+<body class="image">
+
+<% if (session[:is_admin] != 'true') %>
+	<h2>Sorry, you do not have permission to access this page.</h2>
+<% else %>
+
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items/<%= @item.id %>/edit">BACK TO EDIT ITEM</a></h5>
+
+	<h1>MANAGE IMAGES</h1>
+
+	<h4><%= @item.caption %></h4>
+
+<!-- 	display all images here -->
+
+	<%= link_to "Upload New Image", "/items/#{@item.id}/images/new" %>
+
+
+
+<% end %>
+
+</body>

@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  item_id    :integer          not null
-#  url        :string           not null
+#  image_uid  :string
 #  caption    :string
 #  created_at :datetime
 #  updated_at :datetime

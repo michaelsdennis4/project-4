@@ -1,0 +1,5 @@
+<h1>this is the image show page</h1>
+
+<h2><%= @image.caption %></h2>
+
+<%= image_tag @image.image.thumb('400x200#').url if @image.image_stored? %>

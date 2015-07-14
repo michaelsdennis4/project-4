@@ -12,8 +12,9 @@ class ImagesController < ApplicationController
   end
 
   def create
-  	item = Item.find(params[:item_id])
-    image = item.image.new
+  	# item = Item.find(params[:item_id])
+    # image = item.image.new
+    image = Image.new
     if image.update(image_params)
       redirect_to "/items/#{item.id}/images/#{image.id}"
     else
@@ -27,8 +28,9 @@ class ImagesController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:item_id])  
-    image = item.image.find(params[:id])  
+    # item = Item.find(params[:item_id])  
+    # image = item.image.find(params[:id])
+    image = Image.new  
     if image.update(image_params)
     	redirect_to "/items/#{item.id}/images/#{image.id}" 
     else
@@ -43,8 +45,8 @@ class ImagesController < ApplicationController
 
   private
 
-  def item_params
-    params.require(:image).permit(:image_url, :caption, :image)
+  def image_params
+    params.require(:image).permit(:url, :caption, :image)
   end
 
 end

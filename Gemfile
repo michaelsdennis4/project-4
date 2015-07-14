@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dragonfly', '~> 1.0.10'
+gem 'dragonfly-s3_data_store'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

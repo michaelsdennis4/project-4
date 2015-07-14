@@ -132,6 +132,19 @@
 		a {
 			color: red;
 		}
+
+		form {
+			display: inline-block;
+		}
+
+		input[type=submit] {
+			font-size: 16px;
+			letter-spacing: 0.1em;
+			color: red;
+			border: none;
+			background: none;
+		}
+
 	};
 
 	#about {
@@ -156,7 +169,9 @@
 		}
 
 		h2 {
-			line-height: 30px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			line-height: 20px;
 			color: red;
 			text-align: center;
 		}
@@ -366,6 +381,18 @@
 		a {
 			color: red;
 		}
+
+		form {
+			display: inline-block;
+		}
+
+		input[type=submit] {
+			font-size: 16px;
+			letter-spacing: 0.1em;
+			color: red;
+			border: none;
+			background: none;
+		}
 	};
 
 	#about {
@@ -390,9 +417,17 @@
 		}
 
 		h2 {
+			margin-top: 5px;
+			margin-bottom: 20px;
+			line-height: 20px;
 			color: red;
 			text-align: center;
 		}
+
+		a {
+			color: red;
+		}
+
 	};
 
 	.topnav {

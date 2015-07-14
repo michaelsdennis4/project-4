@@ -50,7 +50,20 @@
 </div>
 
 <div id="footer">
-	<h5><a href="/login">LOGIN</a> | <a href="/about">ABOUT</a> | <a href="">CONTACT</a></h5>
+	<% if (session[:user_id] == nil) %>
+	 	<h5><a href="/login">LOGIN</a> | <a href="/about">ABOUT</a> | <a href="mailto:ariam7@gmail.com">CONTACT</a></h5>
+	 <% else %>
+	 	<h5>You are logged in as: <%= session[:user_name] %>
+	 	<form action="/logout" method="post">
+	 		<input type="submit" value="LOGOUT"/>
+	 		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+	 		<input type="hidden" name="_method" value="delete"/>
+	 	</form>
+	 	| <a href="/about">ABOUT</a> | <a href="mailto:ariam7@gmail.com">CONTACT</a> 
+	 	<% if (session[:is_admin] == 'true') %>
+	 		| <a href="">CATEGORIES</a> | <a href="">KEYWORDS</a></h5> 
+	 	<% end %>
+	 <% end %>
 </div>
 
 

@@ -151,6 +151,74 @@
 
 	};
 
+	#item-description {
+		width: 55%;
+		height: 250px;
+		float: left;
+		margin-top: 20px;
+		margin-left: 5%;
+		padding: 10px;
+		border: solid black 1px;
+		overflow: scroll;
+
+		h4 {
+			color: red;
+			letter-spacing: 0.2em;
+			text-align: center;
+		};
+
+		p {
+			font-family: 'Arapey', serif;
+			font-size: 18px;
+			text-align: left;
+		};
+		
+	};
+
+	#item-details {
+		width: 30%;
+		height: 250px;
+		float: right;
+		margin-top: 20px;
+		margin-right: 5%;
+		padding: 10px;
+		text-align: left;
+		border: solid black 1px;
+		overflow: scroll;
+
+		h4 {
+			color: red;
+			letter-spacing: 0.1em;
+			text-align: left;
+		};
+
+	};
+
+	#item-thumbs-container {
+		width: 90%;
+		height: 500px;
+		display: inline-block;
+		float: center;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		border: solid black 1px;
+		overflow: scroll;
+
+		h4 {
+			color: red;
+			letter-spacing: 0.2em;
+			text-align: center;
+		};
+
+	};
+
+	#item-thumbs {
+		width: 10000px;
+		height: 450px;
+		margin-top: 0;
+		text-align: left;
+	}
 
 
 };

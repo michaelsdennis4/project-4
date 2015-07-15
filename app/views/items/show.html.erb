@@ -1,6 +1,51 @@
+<body class="item">
+<% if (session[:is_admin] == 'true') %>
 
-<h1>This is the item show page</h1>
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a> | <a href="/items/<%= @item.id %>/edit">EDIT ITEM</a></h5>
+
+<% else %>
+	<h5 class="topnav"><a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a></h5>
+<% end %>
 
 <h2><%= @item.caption %></h2>
 
-<a href="/items/<%= @item.id %>/edit">edit item</a>
+<h4><%= @item.code %></h4>
+
+
+<div id="item-thumbs-container">
+
+	<h4>IMAGES</h4>
+
+	<div id="item-thumbs">
+
+		<% @item.images.each do |image| %>
+			<%= image_tag image.image.thumb('500x400#').url if image.image_stored? %>
+		<% end %>
+
+	</div>
+
+<div>
+
+
+
+<div>
+
+
+
+</body>
+<!-- 
+#  id             :integer          not null, primary key
+#  code           :string
+#  caption        :string           not null
+#  description    :string
+#  purchase_price :integer
+#  selling_price  :integer
+#  is_available   :boolean          default(TRUE), not null
+#  condition      :string
+#  measurements   :string
+#  date_acquired  :date
+#  date_sold      :date
+#  created_at     :datetime
+#  updated_at     :datetime
+#  thumb_image_id :integer
+# -->

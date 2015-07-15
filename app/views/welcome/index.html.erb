@@ -10,6 +10,8 @@
 
 	<div id="cat-list">
 
+		<p><a href="/items">ALL ITEMS</a></p>
+
 		<% @categories.each do |category| %>
 			<p><a href="/items"><%= category.name.upcase %></a></p>
 		<% end %>

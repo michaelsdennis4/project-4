@@ -2,24 +2,18 @@
 <div id="header">
 	<h1>MARIA NIFOROS</h1>
 	<h3>FINE ANTIQUE LACE, LINENS, & TEXTILES</h3>
-<!-- 	<p id="tagline">Purveyor of fine antique lace and textiles for over thirty years</p> -->
 </div>
 
 <div id="categories">
 
 	<h5>Browse by Category</h5>
 
-	<!-- this will be a dynamically-generated list, with get requests to item search route -->
 	<div id="cat-list">
-		<p><a href="/items">LACE</a></p>
-		<p><a href="">LINENS</a></p>
-		<p><a href="">FANS</a></p>
-		<p><a href="">CLOTHING</a></p>	
-		<p><a href="">SHAWLS</a></p>
-		<p><a href="">CHILDREN'S ITEMS</a></p>	
-		<p><a href="">TEXTILES</a></p>
-		<p><a href="">ACCESSORIES</a></p>	
-		<p><a href="">EARLY ITEMS</a></p>
+
+		<% @categories.each do |category| %>
+			<p><a href="/items"><%= category.name.upcase %></a></p>
+		<% end %>
+
 	</div>
 
 </div>
@@ -28,20 +22,13 @@
 
 	<h5>Search by Keywords</h5>
 
-	<!-- this will be a dynamically-generated list, with get requests to item search route -->
-
 	<form action="" method="post">
 		<div id="key-list">
-		  <input type="checkbox" name="keyword" value="key"/>17th century<br>
-		  <input type="checkbox" name="keyword" value="key"/> 18th century<br>
-		  <input type="checkbox" name="keyword" value="key"/> Brussels<br>
-		  <input type="checkbox" name="keyword" value="key"/> Chantilly<br>
-		  <input type="checkbox" name="keyword" value="key"/> Needlepoint<br>
-		  <input type="checkbox" name="keyword" value="key"/> Veil<br>
-		  <input type="checkbox" name="keyword" value="key"/> Gown<br>
-		  <input type="checkbox" name="keyword" value="key"/> Wedding<br>
-		  <input type="checkbox" name="keyword" value="key"/> Embroidered<br>
-		  <input type="checkbox" name="keyword" value="key"/> Mother of Pearl<br>
+
+			<% @keywords.each do |keyword| %>
+				<input type="checkbox" name="keyword" value="<%= keyword.id %>"/> <%= keyword.phrase %><br>
+			<% end %>
+
 		 </div>
 	  <input type="submit" value="Search"/>
 	  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />

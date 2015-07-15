@@ -20,6 +20,11 @@
 
 class Item < ActiveRecord::Base
 
+	validates :caption, presence: true
+	validates :is_available, presence: true
+
 	has_many :images
+	has_and_belongs_to_many :categories
+	has_and_belongs_to_many :keywords
 
 end

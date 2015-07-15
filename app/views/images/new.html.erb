@@ -1,16 +1,21 @@
 <h1>This is the add a new image page</h1>
 
+<% if (session[:is_admin] != 'true') %>
+	<h2>Sorry, you do not have permission to access this page.</h2>
+	<h4>Please <a href="/login">login</a> to continue</h4>
+<% else %>
 
+	<%= form_for @image, url: {action: "create"} do |f| %>
 
-<%= form_for @image, url: {action: "create"} do |f| %>
+		<%= f.label :caption, "Caption" %>
+		<%= f.text_field :caption %><br>
 
-	<%= f.label :caption, "Caption" %>
-	<%= f.text_field :caption %><br>
+	  <%= f.file_field :image %>
 
-  <%= f.file_field :image %>
+	  <%= f.submit %>
+	  
+	<% end %>
 
-  <%= f.submit %>
-  
 <% end %>
 
 

@@ -2,6 +2,7 @@
 
 <% if (session[:is_admin] != 'true') %>
 	<h2>Sorry, you do not have permission to access this page.</h2>
+	<h4>Please <a href="/login">login</a> to continue</h4>
 <% else %>
 
 	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items/<%= @item.id %>">BACK TO ITEM</a></h5>

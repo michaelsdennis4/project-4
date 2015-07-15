@@ -12,6 +12,8 @@
 
 class Image < ActiveRecord::Base
 
+	validates :item_id, presence: true
+
 	belongs_to :item
 
 	extend Dragonfly::Model

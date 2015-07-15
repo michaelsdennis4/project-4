@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714193735) do
+ActiveRecord::Schema.define(version: 20150715002451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_items", id: false, force: :cascade do |t|
+    t.integer "item_id",     null: false
+    t.integer "category_id", null: false
+  end
+
+  add_index "categories_items", ["category_id"], name: "index_categories_items_on_category_id", using: :btree
+  add_index "categories_items", ["item_id"], name: "index_categories_items_on_item_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.integer  "item_id",    null: false
@@ -38,6 +52,20 @@ ActiveRecord::Schema.define(version: 20150714193735) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "thumb_image_id"
+  end
+
+  create_table "items_keywords", id: false, force: :cascade do |t|
+    t.integer "item_id",    null: false
+    t.integer "keyword_id", null: false
+  end
+
+  add_index "items_keywords", ["item_id"], name: "index_items_keywords_on_item_id", using: :btree
+  add_index "items_keywords", ["keyword_id"], name: "index_items_keywords_on_keyword_id", using: :btree
+
+  create_table "keywords", force: :cascade do |t|
+    t.string   "phrase",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

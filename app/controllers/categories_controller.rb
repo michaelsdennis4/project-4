@@ -1,15 +1,18 @@
 class CategoriesController < ApplicationController
 
+	require 'json'
+
 	def create
-		category = Category.new
-    category.update(category_params)
-    redirect_to "/admin"
+		@category = Category.new
+    @category.update(params)
+    render json: @category.to_json
 	end
 
 	def update
-		category = Category.find(params[:id])
-    category.update(category_params)
-    redirect_to "/admin"
+		@category = Category.find(params[:id])
+    @category[:name] = params[:name]
+    @category.save
+    render json: @category.to_json
 	end
 
 	def delete

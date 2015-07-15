@@ -23,6 +23,25 @@
 			a:visited {
 				color: white;
 			};
+
+		};
+
+		#admin {
+
+			color: black;
+
+			a {
+				color: red;
+			};
+
+			a:hover {
+				color: red;
+			};
+
+			a:visited {
+				color: red;
+			};
+
 		};
 	};
 
@@ -240,6 +259,89 @@
 		};
 	};
 
+	#manage-cat-keys {
+		width: 20%;
+		height: 600px;
+		float: left;
+		margin-top: 100px;
+		margin-left: 2%;
+		margin-right: 0;
+		background-color: rgba(255,255,255,0.9);
+
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
+
+		#cat-key-list {
+			width: 95%;
+			height: 480px;	
+			text-align: left;
+			overflow: scroll;
+		};
+
+		input[type=text] {
+			width: 60%;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			font-family: Courier;
+		};
+
+		input[type=submit] {
+			width: 25%;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 0;
+		};
+
+		input[type=submit]#delete {
+			width: 25%;
+			color: red;
+			float: center;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+		};
+
+		#add-key-cat {
+			width: 95%;
+			height: 75px;
+			float: center;
+			margin-left: auto;
+			margin-right: auto;
+			border: solid black 1px;
+		}
+
+	};
+
+	#manage-items {
+		width: 50%;
+		height: 290px;
+		float: left;
+		margin-top: 100px;
+		margin-left: 2%;
+		background-color: rgba(255,255,255,0.9);
+
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
+	};
+
+	#google-analytics {
+		width: 50%;
+		height: 290px;
+		float: left;
+		margin-top: 20px;
+		margin-left: 2%;
+		background-color: rgba(255,255,255,0.9);
+
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
+	};
+
 };
 
 
@@ -248,7 +350,8 @@
 
 
 
-/*====================================================================*/
+/*SMALL MEDIA
+====================================================================*/
 
 @media (max-width: 770px) {
 

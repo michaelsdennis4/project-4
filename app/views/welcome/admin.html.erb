@@ -1,0 +1,81 @@
+<body class="welcome">
+
+
+<% if (session[:is_admin] != 'true') %>
+	<div id="header">
+		<h2>Sorry, you do not have permission to access this page.</h2>
+		<h4>Please <a href="/login">login</a> to continue</h4>
+	</div>
+<% else %>
+	<div id="header">
+		<h5 class="topnav" id="admin">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/users/<%= session[:user_id] %>">MANAGE PROFILE</a></h5>
+
+		<h3 id="admin">ADMIN CENTER</h3>
+	</div>
+
+	<div id="manage-cat-keys">
+		<h4>CATEGORIES</h4>
+
+		<div id="cat-key-list">
+
+			<% @categories.each do |category| %>
+				<form action="/categories/<%= category.id %>" method="post">
+					<input type="text" name="name" value="<%= category.name.upcase %>"/>
+					<input type="submit" value="Update"/>
+					<input type="hidden" name="_method" value="patch"/>
+					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				</form>
+				<form action="/categories/<%= category.id %>" method="post">
+					<input id="delete" type="submit" value="Delete"/>
+					<input type="hidden" name="_method" value="delete"/>
+					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				</form>
+			<% end %>
+
+		</div>
+		<div id="add-key-cat">
+			<form action="/categories" method="post">
+				<input type="text" name="name" placeholder="Enter new category..."/>
+				<input type="submit" value="Create"/>
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+			</form>
+		</div>
+
+	</div>
+
+	<div id="manage-cat-keys">
+		<h4>KEYWORDS</h4>
+
+
+		<div id="cat-key-list">
+
+			<% @keywords.each do |keyword| %>
+				<form action="/keywords/<%= keyword.id %>" method="post">
+					<input type="text" name="phrase" value="<%= keyword.phrase.upcase %>"/>
+					<input type="submit" value="Update"/>
+					<input type="hidden" name="_method" value="update"/>
+					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				</form>
+				<form action="/keywords/<%= keyword.id %>" method="post">
+					<input id="delete" type="submit" value="Delete"/>
+					<input type="hidden" name="_method" value="delete"/>
+					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				</form>
+			<% end %>
+
+		</div>
+
+
+	</div>
+
+	<div id="manage-items">
+		<h4>MANAGE ITEMS</h4>
+	</div>
+
+	<div id="google-analytics">
+		<h4>GOOGLE ANALYTICS</h4>
+	</div>
+
+<% end %>
+
+</body>

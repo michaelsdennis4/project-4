@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
+  get '/admin' => 'welcome#admin'
+
   get '/login' => 'sessions#new'
 
   post '/login' => 'sessions#create'
@@ -22,6 +24,10 @@ Rails.application.routes.draw do
   resources :items do
     resources :images
   end
+
+  resources :categories
+
+  resources :keywords
 
   # add 404 page
 

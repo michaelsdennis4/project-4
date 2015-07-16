@@ -69,6 +69,10 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debug_inspector (0.0.2)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     dragonfly (1.0.10)
       addressable (~> 2.3)
       multi_json (~> 1.0)
@@ -206,6 +210,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  dotenv-rails
   dragonfly (~> 1.0.10)
   dragonfly-s3_data_store
   jbuilder (~> 2.0)

@@ -15,11 +15,15 @@ Rails.application.routes.draw do
 
   post '/login' => 'sessions#create'
 
-  delete '/logout', to: 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :users
+
+  post '/items/:id/add_category/:category_id' => 'items#add_cat'
+
+  delete '/items/:id/remove_category/:category_id' => 'items#remove_cat'
 
   resources :items do
     resources :images

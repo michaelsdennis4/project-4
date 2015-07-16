@@ -38,6 +38,25 @@ class ItemsController < ApplicationController
     @keywords = Keyword.all.order(:phrase)
   end
 
+  def add_cat
+    @item = Item.find(params[:id]) 
+    category = Category.find(params[:category_id])
+    if (!item.categories.include?(category))
+      @item.categories.append(category)
+    end
+    render json: @item.to_json
+  end
+
+  def remove_cat
+    @item = Item.find(params[:id]) 
+    category = Category.find(params[:category_id])
+    if (item.categories.include?(category))
+      @item.categories.delete(category)
+    end
+    render json: @item.to_json
+  end
+
+
   private
 
   def item_params

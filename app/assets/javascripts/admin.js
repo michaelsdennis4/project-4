@@ -1,6 +1,8 @@
-console.log('main.js linked!');
-
 $('document').ready(function() {
+
+	if (document.body.id != 'admin') { return };
+
+	console.log('admin.js linked!');
 
 	var updateCat = function(event) {
 		event.preventDefault();

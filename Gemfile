@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'annotate', '~> 2.6.6'
 gem 'aws-sdk', '~> 2'
 
+gem 'mustache-js-rails', '~> 1.1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

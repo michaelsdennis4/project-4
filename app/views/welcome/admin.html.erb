@@ -17,18 +17,36 @@
 
 		<div id="cat-key-list">
 
+			<script type="mustache" id="cat-template">
+				<div>
+					<form action="/categories/{{ id }}" method="post">
+						<input type="text" name="name" value="{{ name }}"/>
+						<input type="submit" class="update_cat" id="cat_{{ id }}" value="Update"/>
+						<input type="hidden" name="_method" value="patch"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+					<form action="/categories/{{ id }}" method="post">
+						<input type="submit" class="delete_cat" id="cat_{{ id }}" value="Delete"/>
+						<input type="hidden" name="_method" value="delete"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+				</div>
+			</script>
+
 			<% @categories.each do |category| %>
-				<form action="/categories/<%= category.id %>" method="post">
-					<input type="text" name="name" value="<%= category.name %>"/>
-					<input type="submit" id="cat_<%= category.id %>" value="Update"/>
-					<input type="hidden" name="_method" value="patch"/>
-					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				</form>
-				<form action="/categories/<%= category.id %>" method="post">
-					<input class="delete" type="submit" value="Delete"/>
-					<input type="hidden" name="_method" value="delete"/>
-					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				</form>
+				<div>
+					<form action="/categories/<%= category.id %>" method="post">
+						<input type="text" name="name" value="<%= category.name %>"/>
+						<input type="submit" class="update_cat" id="cat_<%= category.id %>" value="Update"/>
+						<input type="hidden" name="_method" value="patch"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+					<form action="/categories/<%= category.id %>" method="post">
+						<input type="submit" class="delete_cat" id="cat_<%= category.id %>" value="Delete"/>
+						<input type="hidden" name="_method" value="delete"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+				</div>
 			<% end %>
 
 		</div>
@@ -36,7 +54,7 @@
 			<h5>Add A New Category</h5>
 			<form action="/categories" method="post">
 				<input type="text" name="name" placeholder="Enter new category..."/>
-				<input type="submit" value="Create"/>
+				<input type="submit" id="new_cat" value="Create"/>
 				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 			</form>
 		</div>

@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.new
-    @category.update(params)
+    @category[:name] = params[:name]
+    @category.save
     render json: @category.to_json
 	end
 
@@ -15,10 +16,11 @@ class CategoriesController < ApplicationController
     render json: @category.to_json
 	end
 
-	def delete
-		category = Category.find(params[:id])
-		#need to delete from join table first
-
+	def destroy
+		@category = Category.find(params[:id])
+		#need to delete entries from join table first
+		@category.destroy;
+		render json: @category.to_json
 	end
 
 	private

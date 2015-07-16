@@ -121,6 +121,8 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    mustache-js-rails (1.1.0)
+      railties (>= 3.1, <= 5.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -208,6 +210,7 @@ DEPENDENCIES
   dragonfly-s3_data_store
   jbuilder (~> 2.0)
   jquery-rails
+  mustache-js-rails (~> 1.1.0)
   pg
   pry-rails
   rails (= 4.2.0)

@@ -83,6 +83,20 @@
 			font-size: 18px;
 			font-family: 'Arapey', serif;
 		};
+
+		.cat {
+			color: black;
+			padding: 0 2px 0 2px;
+			margin-right: 5px;
+			border: solid black 1px;
+		};
+
+		.key {
+			color: red;
+			padding: 0 2px 0 2px;
+			margin-right: 5px;
+			border: solid red 1px;
+		};
 	};
 
 	#new-item-form {

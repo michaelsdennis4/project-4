@@ -29,6 +29,20 @@
 
 				<p><%= item.description %></p>
 
+				<% if (item.categories.count > 0) %>
+					<h5><% item.categories.each do |cat| %>
+							<span class="cat"><%= cat.name %></span>
+						<% end %>
+					</h5>
+				<% end %>
+
+				<% if (item.keywords.count > 0) %>
+					<h5><% item.keywords.each do |key| %>
+							<span class="key"><%= key.phrase %></span>
+						<% end %>
+					</h5>
+				<% end %>
+
 			</div>
 
 		</div>

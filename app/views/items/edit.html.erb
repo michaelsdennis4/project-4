@@ -1,4 +1,4 @@
-<body class="item">
+<body class="item" id="item">
 
 <% if (session[:is_admin] != 'true') %>
 	<h2>Sorry, you do not have permission to access this page.</h2>
@@ -9,11 +9,9 @@
 
 	<h1 class="headline">EDIT ITEM</h1>
 
-	<!-- add images should be on the edit page - redirect there after create -->
+	<div><%= link_to "Manage Images for this Item", "/items/#{@item.id}/images" %></div>
 
-	<%= link_to "Manage Images for this Item", "/items/#{@item.id}/images" %>
-
-	<div id="item-form">
+	<div id="edit-item-form">
 
 		<%= form_for @item, url: {action: "update"} do |f| %>
 			
@@ -45,6 +43,50 @@
 			
 			<div id="submit"><%= f.submit "Update", {:class => "button"}  %></div>
 		<% end %>
+
+	</div>
+
+	</div>
+
+	<div id="item-cats-keys">
+		<h5>CATEGORIES</h5>
+
+		<form action="" method="post">
+			<div class="cat-key-list" id="item_<%= @item.id %>">
+
+				<% @categories.each do |category| %> 
+					<% if (@item.categories.include?(category)) %>
+						<input type="checkbox" class="cat" id="cat_<%= category.id %>" checked/> <%= category.name %><br>
+					<% else %>
+						<input type="checkbox" class="cat" id="cat_<%= category.id %>"/> <%= category.name %><br>
+					<% end %>
+				<% end %>
+
+			 </div>
+		  
+		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
+
+	</div>
+
+	<div id="item-cats-keys">
+		<h5>KEYWORDS</h5>
+
+		<form action="" method="post">
+			<div class="cat-key-list" id="item_<%= @item.id %>">
+
+				<% @keywords.each do |keyword| %>
+					<% if (@item.keywords.include?(keyword)) %>
+						<input type="checkbox" class="key" id="key_<%= keyword.id %>" checked/> <%= keyword.phrase %><br>
+					<% else %>
+						<input type="checkbox" class="key" id="key_<%= keyword.id %>"/> <%= keyword.phrase %><br>
+					<% end %>
+				<% end %>
+
+			 </div>
+		  
+		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
 
 	</div>
 

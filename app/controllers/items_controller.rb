@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  require 'json'
+
 	def index
     @items = Item.all
   end
@@ -13,7 +15,7 @@ class ItemsController < ApplicationController
   def create
     item = Item.new
     if item.update(item_params)
-      redirect_to "/items/#{item.id}"
+      redirect_to "/items/#{item.id}/edit"
     else
       redirect_to '/items/new'
     end
@@ -38,24 +40,27 @@ class ItemsController < ApplicationController
     @keywords = Keyword.all.order(:phrase)
   end
 
-  def add_cat
+  def toggle_cat
     @item = Item.find(params[:id]) 
     category = Category.find(params[:category_id])
-    if (!item.categories.include?(category))
+    if (@item.categories.include?(category))
+      @item.categories.delete(category)
+    else
       @item.categories.append(category)
     end
     render json: @item.to_json
   end
 
-  def remove_cat
+  def toggle_key
     @item = Item.find(params[:id]) 
-    category = Category.find(params[:category_id])
-    if (item.categories.include?(category))
-      @item.categories.delete(category)
+    keyword = Keyword.find(params[:keyword_id])
+    if (@item.keywords.include?(keyword))
+      @item.keywords.delete(keyword)
+    else
+      @item.keywords.append(keyword)
     end
     render json: @item.to_json
   end
-
 
   private
 

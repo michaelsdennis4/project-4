@@ -21,9 +21,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  post '/items/:id/add_category/:category_id' => 'items#add_cat'
-
-  delete '/items/:id/remove_category/:category_id' => 'items#remove_cat'
+  patch '/items/:id/toggle_category/:category_id' => 'items#toggle_cat'
+  patch '/items/:id/toggle_keyword/:keyword_id' => 'items#toggle_key'
 
   resources :items do
     resources :images

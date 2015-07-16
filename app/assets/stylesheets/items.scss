@@ -85,7 +85,74 @@
 		};
 	};
 
-	#item-form {
+	#new-item-form {
+		width: 40%;
+		height: 500px;
+		float: center;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;	
+		border: solid black 1px;
+		padding: 10px;
+
+		#submit {
+			text-align: center;
+		}
+
+		label {
+			width: 25%;
+			color: red;
+			margin-right: 5px;
+			text-align: right;
+		};
+
+		input[type=text] {
+			width: 70%;
+			margin-top: 5px;
+			font-family: 'Courier';
+		};
+
+		input[type=text].short {
+			width: 30%;
+			margin-top: 5px;
+			font-family: 'Courier';
+		};
+
+		input[type=date] {
+			width: 30%;
+			margin-top: 5px;
+			font-family: 'Courier';
+		};
+
+		textarea {
+			width: 70%;
+			margin-top: 5px;
+			height: 100px;
+			overflow: scroll;
+			font-family: 'Courier';
+			padding: 5px;
+		};
+
+		input[type=submit] {
+			margin-top: 20px;
+			text-align: center;
+			width: 75px;
+		};
+
+		input[type=radiobutton] {
+			width: 10px;
+			margin-top: 5px;
+		};
+
+		.short {
+			width: 30px;
+			color: 'green';	
+		};	
+
+	};
+
+	#edit-item-form {
 		width: 40%;
 		height: 500px;
 		float: left;
@@ -152,14 +219,32 @@
 
 	};
 
-	#item-cats {
+	.cat-key-list {
+		width: 70%;
+		float: center;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+
+		input[type=checkbox] {
+			margin-top: 5px;
+		}
+	}
+
+	#item-cats-keys {
 		width: 20%;
 		height: 500px;
 		float: left;
 		margin-top: 20px;
 		margin-left: 20px;
 		border: solid black 1px;
-	}
+
+		h5 {
+			color: red;
+			letter-spacing: 0.1em;
+		}
+
+	};
 
 	#item-keys {
 		width: 20%;

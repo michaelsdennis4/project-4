@@ -9,7 +9,7 @@
 
 	<h1 class="headline">NEW ITEM</h1>
 
-	<div id="item-form">
+	<div id="new-item-form" id="new">
 
 		<%= form_for @item, url: {action: "create"} do |f| %>
 			
@@ -41,42 +41,6 @@
 			
 			<div id="submit"><%= f.submit "Create", {:class => "button"}  %></div>
 		<% end %>
-
-	</div>
-
-	<div id="item-cats">
-		<h5>CATEGORIES</h5>
-
-		<form action="" method="post">
-			<div id="cat-list">
-
-				<% @categories.each do |category| %>
-					<input type="checkbox" class="category" id="cat_<%= category.id %>"/> <%= category.name %><br>
-				<% end %>
-
-			 </div>
-		  
-		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-		</form>
-
-	</div>
-
-	<div id="item-keys">
-		<h5>KEYWORDS</h5>
-
-		<form action="" method="post">
-			<div id="key-list">
-
-				<% @keywords.each do |keyword| %>
-					<input type="checkbox" name="keyword" value="<%= keyword.id %>"/> <%= keyword.phrase %><br>
-				<% end %>
-
-			 </div>
-		  
-		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-		</form>
-
-	</div>
 
 <% end %>
 

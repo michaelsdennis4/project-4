@@ -140,6 +140,8 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -218,6 +220,7 @@ DEPENDENCIES
   mustache-js-rails (~> 1.1.0)
   pg
   pry-rails
+  rack-cache
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

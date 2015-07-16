@@ -44,6 +44,13 @@
 		letter-spacing: 0.2em;
 	};
 
+	.key {
+		color: red;
+		padding: 0 2px 0 2px;
+		margin-right: 5px;
+		border: solid red 1px;
+	};
+
 	.preview {
 		width: 80%;
 		height: 400px;

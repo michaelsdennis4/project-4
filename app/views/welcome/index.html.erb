@@ -13,7 +13,7 @@
 		<p><a href="/items">ALL ITEMS</a></p>
 
 		<% @categories.each do |category| %>
-			<p><a href="/items"><%= category.name.upcase %></a></p>
+			<p><a href="/items?category_id=<%= category.id %>"><%= category.name.upcase %></a></p>
 		<% end %>
 
 	</div>
@@ -24,11 +24,11 @@
 
 	<h5>Search by Keywords</h5>
 
-	<form action="" method="post">
+	<form action="/items" method="get">
 		<div id="key-list">
 
 			<% @keywords.each do |keyword| %>
-				<input type="checkbox" name="keyword" value="<%= keyword.id %>"/> <%= keyword.phrase %><br>
+				<input type="checkbox" name="keyword_ids[]" value="<%= keyword.id %>"/> <%= keyword.phrase %><br>
 			<% end %>
 
 		 </div>

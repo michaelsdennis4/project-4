@@ -3,10 +3,27 @@ class ItemsController < ApplicationController
   require 'json'
 
 	def index
-    @items = Item.all
+    if (params[:category_id])
+      @category = Category.find(params[:category_id])
+      @items = @category.items
+    elsif (params[:keyword_ids])
+      @keywords = []
+      @items = []
+      params[:keyword_ids].each do |key_id|
+        keyword = Keyword.find(key_id)
+        @keywords.push(keyword)
+        keyword.items.each do |item|
+          if (!@items.include?(item))
+            @items.push(item)
+          end
+        end
+      end
+    else
+      @items = Item.all
+    end
   end
 
-   def new
+  def new
     @item = Item.new
     @categories = Category.all.order(:name)
     @keywords = Keyword.all.order(:phrase)

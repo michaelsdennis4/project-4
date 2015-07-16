@@ -7,11 +7,23 @@
 	<h5 class="topnav"><a href="/">HOME</a></h5>
 <% end %>
 
-<h1 class="headline">LACE</h1>
+<% if(@category) %>
+	<h1 class="headline"><%= @category.name.upcase %></h1>
+<% elsif (@keywords) %>
+	<h1 class="headline">KEYWORD SEARCH</h1>
+	<h5><% @keywords.each do |key| %>
+			<span class="key"><%= key.phrase %></span>
+		<% end %>
+	</h5>
+<% else %>
+	<h1 class="headline">ALL ITEMS</h1>
+<% end %>
 
-<!-- possible hidden keyword/category edit search box here? -->
-
-<!-- loop through search results here -->
+<% if (@items.count == 0) %>
+	<br>
+	<h4>Sorry, there were no items found.</h4>
+	<h4>Please try another search or category.</h4>
+<% end %>
 
 <div id="results">
 

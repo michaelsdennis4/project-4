@@ -24,6 +24,7 @@ $('document').ready(function() {
 
 	var deleteCat = function(event) {
 		event.preventDefault();
+		if (window.confirm('Are you sure you want to delete this category?\r\nDeleting will remove this category from all items and cannot be undone.') != true) { return };
 		var id = event.target.getAttribute("id").split("_")[1];
 		var form = event.target.parentNode;
 		var params = $(form).serializeArray();
@@ -87,6 +88,7 @@ $('document').ready(function() {
 
 	var deleteKey = function(event) {
 		event.preventDefault();
+		if (window.confirm('Are you sure you want to delete this keyword?\r\nDeleting will remove this keyword from all items and cannot be undone.') != true) { return };
 		var id = event.target.getAttribute("id").split("_")[1];
 		var form = event.target.parentNode;
 		var params = $(form).serializeArray();

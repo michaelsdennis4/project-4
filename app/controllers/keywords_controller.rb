@@ -4,7 +4,8 @@ class KeywordsController < ApplicationController
 
 	def create
 		@keyword = Keyword.new
-		keyword.update(keyword_params)
+		@keyword[:phrase] = params[:phrase]
+		@keyword.save
     render json: @keyword.to_json
 	end
 

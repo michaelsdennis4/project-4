@@ -273,7 +273,15 @@
 			letter-spacing: 0.1em;
 		};
 
-		#cat-key-list {
+		#cat-list {
+			width: 95%;
+			height: 460px;	
+			margin-bottom: 10px;
+			text-align: left;
+			overflow: scroll;
+		};
+
+		#key-list {
 			width: 95%;
 			height: 460px;	
 			margin-bottom: 10px;
@@ -297,7 +305,17 @@
 			margin-bottom: 5px;
 		};
 
-		input[type=submit].delete_cat {
+		input[type=submit].delete-cat {
+			width: 25%;
+			float: left;
+			color: red;
+			float: center;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+		};
+
+		input[type=submit].delete-key {
 			width: 25%;
 			float: left;
 			color: red;

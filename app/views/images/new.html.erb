@@ -1,20 +1,34 @@
-<h1>This is the add a new image page</h1>
+<body class="image">
 
 <% if (session[:is_admin] != 'true') %>
 	<h2>Sorry, you do not have permission to access this page.</h2>
 	<h4>Please <a href="/login">login</a> to continue</h4>
 <% else %>
 
-	<%= form_for @image, url: {action: "create"} do |f| %>
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items/<%= @item.id %>/images">BACK TO IMAGES</a></h5>
 
-		<%= f.label :caption, "Caption" %>
-		<%= f.text_field :caption %><br>
+	<h1 class="headline">IMAGE UPLOAD</h1>
 
-	  <%= f.file_field :image %>
+	<h5>- FOR -</h5>
 
-	  <%= f.submit %>
-	  
-	<% end %>
+	<h3><%= @item.caption %></h3>
+	<h5><%= @item.code %></h5>
+	<br>
+
+	<div id="upload">
+
+		<%= form_for @image, url: {action: "create"} do |f| %>
+
+			<%= f.file_field :image, :html => {:class => "file-upload"}%>
+
+			<%= f.label :caption, "Caption" %>
+			<%= f.text_field :caption %><br>
+
+		  <%= f.submit :value => "Upload Image" %>
+		  
+		<% end %>
+
+	</div>
 
 <% end %>
 

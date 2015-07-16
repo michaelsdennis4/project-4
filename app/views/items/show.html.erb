@@ -1,15 +1,15 @@
 <body class="item">
 <% if (session[:is_admin] == 'true') %>
 
-	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a> | <a href="/items/<%= @item.id %>/edit">EDIT ITEM</a></h5>
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a> | <a href="/items/<%= @item.id %>/edit">EDIT ITEM</a> | <a href="/admin">ADMIN CENTER</a></h5>
 
 <% else %>
 	<h5 class="topnav"><a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a></h5>
 <% end %>
 
 <h2><%= @item.caption %></h2>
-
 <h4><%= @item.code %></h4>
+<br>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -23,7 +23,7 @@
   <div class="carousel-inner" role="listbox">
   	<% @item.images.each_with_index do |image, i| %>
 	    <div class="item <% if (i==0) %> active <% end %>">
-	      <%= image_tag image.image.url if image.image_stored? %>
+	      <%= image_tag image.image.thumb('x600').url if image.image_stored? %>
 	      <div class="carousel-caption">
 	        ...
 	      </div>

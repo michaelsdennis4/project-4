@@ -1,8 +1,10 @@
 class ImagesController < ApplicationController
 
+  require 'json'
+
 	def index
 		@item = Item.find(params[:item_id])
-    @images = @item.images.all
+    @images = @item.images.all.order(:id);
   end
 
   def new
@@ -14,30 +16,25 @@ class ImagesController < ApplicationController
   	item = Item.find(params[:item_id])
     image = item.images.new
     if image.update(image_params)
-      redirect_to "/items/#{item.id}/images/#{image.id}"
+      redirect_to "/items/#{item.id}/images"
     else
       redirect_to '/items/#{item.id}/images/new'
     end
   end
 
-  def show
-  	@item = Item.find(params[:item_id])
-    @image = @item.images.find(params[:id])
+  def update #caption only
+    item = Item.find(params[:item_id])
+    @image = item.images.find(params[:id])
+    @image[:caption] = params[:caption]
+    @image.save
+    render json: @image.to_json
   end
 
-  def update
-    item = Item.find(params[:item_id])  
-    image = item.images.find(params[:id])
-    if image.update(image_params)
-    	redirect_to "/items/#{item.id}/images/#{image.id}" 
-    else
-    	redirect_to "/items/#{item.id}/images/#{image.id}/edit" 
-    end
-  end
-
-  def edit
-    @item = Item.find(params[:item_id]) 
-    @image = @item.images.find(params[:id])
+  def destroy
+    item = Item.find(params[:item_id]) 
+    @image = item.images.find(params[:id])
+    @image.destroy
+    render json: @image.to_json
   end
 
   private

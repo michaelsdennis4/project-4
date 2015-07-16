@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   patch '/items/:id/toggle_keyword/:keyword_id' => 'items#toggle_key'
 
   resources :items do
-    resources :images
+    resources :images, except: [:show, :edit]
   end
 
   resources :categories

@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
 
    def new
     @item = Item.new
+    @categories = Category.all.order(:name)
+    @keywords = Keyword.all.order(:phrase)
   end
 
   def create
@@ -32,6 +34,8 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id]) 
+    @categories = Category.all.order(:name)
+    @keywords = Keyword.all.order(:phrase)
   end
 
   private

@@ -5,7 +5,7 @@
 	<h4>Please <a href="/login">login</a> to continue</h4>
 <% else %>
 
-	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a></h5>
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items">BACK TO ITEMS</a> | <a href="/admin">ADMIN CENTER</a></h5>
 
 	<h1 class="headline">NEW ITEM</h1>
 
@@ -41,6 +41,40 @@
 			
 			<div id="submit"><%= f.submit "Create", {:class => "button"}  %></div>
 		<% end %>
+
+	</div>
+
+	<div id="item-cats">
+		<h5>CATEGORIES</h5>
+
+		<form action="" method="post">
+			<div id="cat-list">
+
+				<% @categories.each do |category| %>
+					<input type="checkbox" name="category" value="<%= category.id %>"/> <%= category.name %><br>
+				<% end %>
+
+			 </div>
+		  
+		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
+
+	</div>
+
+	<div id="item-keys">
+		<h5>KEYWORDS</h5>
+
+		<form action="" method="post">
+			<div id="key-list">
+
+				<% @keywords.each do |keyword| %>
+					<input type="checkbox" name="keyword" value="<%= keyword.id %>"/> <%= keyword.phrase %><br>
+				<% end %>
+
+			 </div>
+		  
+		  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
 
 	</div>
 

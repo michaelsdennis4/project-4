@@ -7,8 +7,6 @@ $('document').ready(function() {
 	var itemCat = function(event) {
 		var item_id = event.target.parentNode.getAttribute("id").split("_")[1];
 		var cat_id = event.target.getAttribute("id").split("_")[1];
-		console.log(item_id);
-		console.log(cat_id);
 		$.ajax({
 			url: '/items/'+item_id+'/toggle_category/'+cat_id,
 			type: 'PATCH',
@@ -25,8 +23,6 @@ $('document').ready(function() {
 	var itemKey = function(event) {
 		var item_id = event.target.parentNode.getAttribute("id").split("_")[1];
 		var key_id = event.target.getAttribute("id").split("_")[1];
-		console.log(item_id);
-		console.log(key_id);
 		$.ajax({
 			url: '/items/'+item_id+'/toggle_keyword/'+key_id,
 			type: 'PATCH',

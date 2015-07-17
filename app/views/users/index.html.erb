@@ -1,0 +1,48 @@
+<body class="users">
+
+<% if (session[:is_admin] != 'true') %>
+	<div id="header">
+		<h2>Sorry, you do not have permission to access this page.</h2>
+		<h4>Please <a href="/login">login</a> to continue</h4>
+	</div>
+<% else %>
+	<div id="header">
+		<h5 class="topnav" id="admin">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/admin">ADMIN CENTER</a></h5>
+		<h1>ALL USERS</h1>
+	</div>
+
+	<div id="user-list">
+
+		<table>
+			<tr>
+				<th>USER NAME</th>
+				<th>EMAIL</th>
+				<th>TYPE</th>
+			</tr>
+
+			<% @users.each do |user| %>
+				<tr>
+					<td>
+						<h5><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></h5>
+					</td>
+					<td>
+						<h5><a href="mailto:<%= user.email %>"><%= user.email %></a></h5>
+					</td>
+					<td>
+						<% if (user.is_admin == 'true') %>
+							<h5>ADMINISTRATOR</h5>
+						<% else %>
+							<h5>USER</h5>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+
+
+
+	</div>
+
+<% end %>
+
+</body>

@@ -129,11 +129,7 @@
 		<h5><%= @first_name %> <%= @last_name %></h5>
 		<h5><%= @email %></h5>
 		<h5><a href="/users/<%= session[:user_id] %>">EDIT MY PROFILE</a></h5>
-		<% if (session[:is_admin] == 'true') %>
-			<h5><a href="/users%>">MANAGE USERS</a></h5>
-		<% end %>
-
-	
+		<h5><a href="/users">MANAGE USERS</a></h5>
 	</div>
 
 	<div id="google-analytics">

@@ -1,4 +1,4 @@
-<body class="image">
+<body class="image" id="uploads">
 
 <% if (session[:is_admin] != 'true') %>
 	<h2>Sorry, you do not have permission to access this page.</h2>
@@ -24,7 +24,7 @@
 			<%= f.label :caption, "Caption" %>
 			<%= f.text_field :caption %><br>
 
-		  <%= f.submit :value => "Upload Image" %>
+			<input type="submit" id="upload-submit" value="Upload Image"/>
 		  
 		<% end %>
 

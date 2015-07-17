@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :users
+  patch '/change_password' => 'users#change_pw'
+
+  resources :users, except: [:show]
 
   patch '/items/:id/toggle_category/:category_id' => 'items#toggle_cat'
   patch '/items/:id/toggle_keyword/:keyword_id' => 'items#toggle_key'

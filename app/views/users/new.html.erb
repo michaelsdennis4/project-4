@@ -1,12 +1,50 @@
-<body class="users">
+<body class="users" id="user">
 
-	<h5 class="topnav"><a href="/">HOME</a> | <a href="/admin">ADMIN CENTER</a></h5>
+<% if (session[:is_admin] != 'true') %>
+	<div id="header">
+		<h2>Sorry, you do not have permission to access this page.</h2>
+		<h4>Please <a href="/login">login</a> to continue</h4>
+	</div>
+<% else %>
+	<div id="header">
+		<h5 class="topnav" id="admin">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/users">USERS</a> | <a href="/admin">ADMIN CENTER</a></h5>
+		<h1>NEW USER</h1>
+	</div>
 
-	<h1>New User Page</h1>
+	<div id="new-user-form">
 
+		<%= form_for @user, url: {action: "create"} do |f| %>
+			
+			<%= f.label :first_name, "First Name" %>
+			<%= f.text_field :first_name %><br>
+			<%= f.label :last_name, "Last Name" %>
+			<%= f.text_field :last_name %><br>
+			<%= f.label :email, "Email" %>
+			<%= f.text_field :email %><br>
 
+			<%= f.label :password %>
+	    <%= f.password_field(:password) %>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field(:password_confirmation) %>   
 
+			<%= f.label :is_admin, "Administrator?" %>
+			<%= f.radio_button(:is_admin, "true") %>
+			<%= f.label(:is_admin, "Yes", {:class => "short"}) %>
+			<%= f.radio_button(:is_admin, "false") %>
+			<%= f.label(:is_admin, "No", {:class => "short"}) %><br>
 
+			<%= f.label :is_active, "Active?" %>
+			<%= f.radio_button(:is_active, "true") %>
+			<%= f.label(:is_active, "Yes", {:class => "short"}) %>
+			<%= f.radio_button(:is_active, "false") %>
+			<%= f.label(:is_active, "No", {:class => "short"}) %><br>
+			
+			<div id="submit"><%= f.submit "Create", {:class => "update-user"}  %></div>
+		<% end %>
+
+	</div>
+
+<% end %>
 
 
 </body>

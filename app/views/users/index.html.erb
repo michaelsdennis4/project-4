@@ -8,22 +8,25 @@
 <% else %>
 	<div id="header">
 		<h5 class="topnav" id="admin">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/admin">ADMIN CENTER</a></h5>
-		<h1>ALL USERS</h1>
+		<h1>USERS</h1>
 	</div>
 
 	<div id="user-list">
+
+		<h5><a href="/users/new">ADD A NEW USER</a><h5>
 
 		<table>
 			<tr>
 				<th>USER NAME</th>
 				<th>EMAIL</th>
 				<th>TYPE</th>
+				<th>STATUS</th>
 			</tr>
 
 			<% @users.each do |user| %>
 				<tr>
 					<td>
-						<h5><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></h5>
+						<h5><a href="/users/<%= user.id %>/edit"><%= user.first_name %> <%= user.last_name %></a></h5>
 					</td>
 					<td>
 						<h5><a href="mailto:<%= user.email %>"><%= user.email %></a></h5>
@@ -33,6 +36,13 @@
 							<h5>ADMINISTRATOR</h5>
 						<% else %>
 							<h5>USER</h5>
+						<% end %>
+					</td>
+					<td>
+						<% if (user.is_active == true) %>
+							<h5>ACTIVE</h5>
+						<% else %>
+							<h5>INACTIVE</h5>
 						<% end %>
 					</td>
 				</tr>

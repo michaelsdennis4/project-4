@@ -34,13 +34,14 @@
 			<%= f.radio_button(:is_active, "false") %>
 			<%= f.label(:is_active, "No", {:class => "short"}) %><br>
 			
-			
-			<div id="submit"><%= f.submit "Update", {:class => "update-user"}  %></div>
+			<div id="submit">
+				<%= f.submit "Update", {:class => "update-user"}  %>
+			</div>
 		<% end %>
 
 	</div>
 
-	<div id="change-password">
+	<div class="change-password" id="user_<%= @user.id %>">
 
 		<%= form_for(@user, :url => "/change_password") do |f| %>
 
@@ -50,11 +51,9 @@
 			  <%= f.password_field(:password, :class => "") %>
 		    <%= f.label :new_password %>
 		    <%= f.password_field(:new_password, :class => "") %>
-				<%= f.label :new_password_confirmation %>
-				<%= f.password_field(:new_password_confirmation, :class => "") %>   
-
+		  
 	    	<div id="submit">
-	    		<%= f.submit "Change Password", {:class => "button"}  %>
+	    		<%= f.submit "Change Password", {:class => "new-password"}  %>
 	    	</div>
 
 	    	<h5 id="message"><%= @message %></h5>

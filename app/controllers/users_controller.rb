@@ -25,38 +25,26 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])  
-    # user.update(user_params) 
-    @user.first_name = params["first_name"]
-    @user.last_name = params[:last_name]
-    @user.email = params[:email]
-    @user.is_admin = params[:is_admin]
-    @user.is_active = params[:is_active]
+    @user[:first_name] = params[:user][:first_name]
+    @user[:last_name] = params[:user][:last_name]
+    @user[:email] = params[:user][:email]
+    @user[:is_admin] = params[:user][:is_admin]
+    @user[:is_active] = params[:user][:is_active]
     @user.save
     render json: @user.to_json
-    # redirect_to "/users/#{user.id}/edit"
   end
 
   def change_pw
     user = User.find_by({email: params[:user][:email]})
-    if (user && user.authenticate(params[:password]))
-      if user.valid?
-        user.password = params[:user][:new_password] unless params[:user][:new_password].nil? || params[:user][:new_password].empty?
+    @message = 'ERROR: Password NOT changed!'
+    if (user && user.authenticate(params[:user][:password]))
+      if (!params[:user][:new_password].nil? && !params[:user][:new_password].empty?)
+        user.password = params[:user][:new_password] unless 
         user.save
         @message = 'Password changed successfully!'
-      else 
-       @message = 'ERROR: Password NOT changed!' 
       end
-    else
-      @message = 'ERROR: Password NOT changed!' 
     end
-    if (user)
-      @user = user
-      render "edit.html.erb"
-      # redirect_to "/users/#{user.id}/edit"
-    else
-      redirect_to "/users"
-    end
-    # render json: @message.to_json 
+    render json: @message.to_json
   end
 
 

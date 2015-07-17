@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   require 'json'
 
 	def index
-    @users = User.all.order(:is_admin).order(:last_name).order(:first_name)
+    @users = User.all.order("is_admin DESC").order(:last_name).order(:first_name)
   end
 
   def new
@@ -17,23 +17,23 @@ class UsersController < ApplicationController
   def create
     user = User.new
     if user.update(user_params)
-      redirect_to "/users/#{user.id}"
+      redirect_to "/users"
     else
       redirect_to '/users/new'
     end
   end
 
   def update
-    user = User.find(params[:id])  
-    user.update(user_params) 
-    # @user[:first_name] = params[:first_name]
-    # @user[:last_name] = params[:last_name]
-    # @user[:email] = params[:email]
-    # @user[:is_admin] = params[:is_admin]
-    # @user[:is_active] = params[:is_active]
-    # @user.save
-    # render json: @user.to_json
-    redirect_to "/users/#{user.id}/edit"
+    @user = User.find(params[:id])  
+    # user.update(user_params) 
+    @user.first_name = params["first_name"]
+    @user.last_name = params[:last_name]
+    @user.email = params[:email]
+    @user.is_admin = params[:is_admin]
+    @user.is_active = params[:is_active]
+    @user.save
+    render json: @user.to_json
+    # redirect_to "/users/#{user.id}/edit"
   end
 
   def change_pw
@@ -50,7 +50,8 @@ class UsersController < ApplicationController
       @message = 'ERROR: Password NOT changed!' 
     end
     if (user)
-      render "/users/#{user.id}/edit"
+      @user = user
+      render "edit.html.erb"
       # redirect_to "/users/#{user.id}/edit"
     else
       redirect_to "/users"
@@ -62,7 +63,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :is_admin, :is_active)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :is_admin, :is_active)
   end
 
 end

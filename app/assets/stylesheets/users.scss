@@ -94,8 +94,15 @@ $bg-color: rgba(255,255,255,0.9);
 			text-align: left;
 
 			th {
-				font-size: 16px;
+				font-size: 15px;
+				border-bottom: solid black 1px;
+				padding-bottom: 5px;
 			};
+
+			tr {
+			 margin-top: 10px;
+			};
+
 		};
 	};
 
@@ -147,7 +154,7 @@ $bg-color: rgba(255,255,255,0.9);
 
 	};
 
-	#user-form {
+	.user-form {
 		width: 40%;
 		height: 250px;
 		float: center;

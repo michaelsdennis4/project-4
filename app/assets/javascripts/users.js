@@ -5,9 +5,25 @@ $('document').ready(function() {
 	console.log('users.js linked!');
 
 	var updateUser = function(event) {
-		event.preventDefault();
+		event.preventDefault();  
 		var form = event.target.parentNode.parentNode;
+		var user_id = form.parentNode.getAttribute("id").split("_")[1];
 		var params = $(form).serializeArray();
+		console.log(params);
+		$.ajax({
+			url: '/users/'+user_id,
+			type: 'PATCH',
+			data: params,
+			dataType: 'json',
+			success: function() {
+				console.log('success');
+
+			},
+			error: function() {
+				console.log('error');
+
+			}
+		});
 		
 
 
@@ -15,7 +31,7 @@ $('document').ready(function() {
 
 
 
-	// $('.update-user').bind('click', updateUser);
+	$('.update-user').bind('click', updateUser);
 
 
 });

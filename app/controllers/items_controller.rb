@@ -18,6 +18,8 @@ class ItemsController < ApplicationController
           end
         end
       end
+    elsif (params[:code])
+      @items = Item.where({code: params[:code]})
     else
       @items = Item.all
     end

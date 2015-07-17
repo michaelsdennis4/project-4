@@ -112,16 +112,28 @@
 
 	<div id="manage-items">
 		<h4>MANAGE ITEMS</h4>
+		<h5>There are currently <%= @items_count %> items on the site.</h5>
 		<h5><a href="/items/new">ADD A NEW ITEM</a></h5>
 		<h5><a href="/items">VIEW & EDIT ALL ITEMS</a></h5>
 		<br>
-		<h5>FIND AN ITEM</h5>
-		<div id="find-item">
-			<label>Search by Code: 	<input type="text" name="code" value=""></label>
+		<form action="/items" method="get" id="find-item">
+			<label for="code">Find Item by Code:</label>
+			<input type="text" name="code" placeholder="Enter an item code..."/>
+			<input type="submit" value="Find"/>
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>	
+	</div>
 
+	<div id="admin-profile">
+		<h4>YOUR PROFILE</h4>
+		<h5><%= @first_name %> <%= @last_name %></h5>
+		<h5><%= @email %></h5>
+		<h5><a href="/users/<%= session[:user_id] %>">EDIT MY PROFILE</a></h5>
+		<% if (session[:is_admin] == 'true') %>
+			<h5><a href="/users%>">MANAGE USERS</a></h5>
+		<% end %>
 
-		</div>
-		
+	
 	</div>
 
 	<div id="google-analytics">

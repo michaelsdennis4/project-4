@@ -9,13 +9,12 @@ $('document').ready(function() {
 		var form = event.target.parentNode.parentNode;
 		var user_id = form.parentNode.getAttribute("id").split("_")[1];
 		var params = $(form).serializeArray();
-		console.log(params);
 		$.ajax({
 			url: '/users/'+user_id,
 			type: 'PATCH',
 			data: params,
 			dataType: 'json',
-			success: function() {
+			success: function(result) {
 				console.log('profile updated successfully!');
 			},
 			error: function() {
@@ -36,22 +35,23 @@ $('document').ready(function() {
 			dataType: 'json',
 			success: function(result) {
 				console.log('success');
-				console.log(result);
 				$('#message').text(result);
-				//need to clear form
+				$('.pass').val("");
+				$('.newpass').val("");
 			},
 			error: function() {
 				console.log('error');
 				$('#message').text('ERROR: Password NOT changed.');
-				//need to clear form
+				$('.pass').val("");
+				$('.newpass').val("");
 			}
 		});
 	};
 
 
-
 	$('.update-user').bind('click', updateUser);
 	$('.new-password').bind('click', changePassword);
+
 
 
 });

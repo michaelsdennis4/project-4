@@ -200,6 +200,13 @@ $bg-color: rgba(255,255,255,0.9);
 			width: 30px;
 		};	
 
+		.delete {
+			float: right;
+			color: red;
+			margin-top: -24px;
+			margin-right: 40px;
+		}
+
 	};
 
 	.change-password {

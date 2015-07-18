@@ -34,6 +34,16 @@ class UsersController < ApplicationController
     render json: @user.to_json
   end
 
+  def destroy
+    user = User.find(params[:id]) 
+    user.destroy
+    if (user.id == session[:user_id])
+      redirect_to '/logout'
+    else
+      redirect_to '/users'
+    end
+  end
+
   def change_pw
     user = User.find_by({email: params[:user][:email]})
     @message = 'ERROR: Password NOT changed!'

@@ -39,6 +39,12 @@
 			</div>
 		<% end %>
 
+		<form action="/users/<%= @user.id %>" method="post">
+			<input type="submit" class="delete" id="user_<%= @user.id %>" value="DELETE USER"/>
+			<input type="hidden" name="_method" value="delete"/>
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
+
 	</div>
 
 	<div class="change-password" id="user_<%= @user.id %>">
@@ -48,9 +54,9 @@
 		  <%= hidden_field(:user, :email, :value => @user.email) %>
 
 				<%= f.label :password %>
-			  <%= f.password_field(:password, :class => "") %>
+			  <%= f.password_field(:password, :class => "pass") %>
 		    <%= f.label :new_password %>
-		    <%= f.password_field(:new_password, :class => "") %>
+		    <%= f.password_field(:new_password, :class => "newpass") %>
 		  
 	    	<div id="submit">
 	    		<%= f.submit "Change Password", {:class => "new-password"}  %>

@@ -4,7 +4,7 @@ $('document').ready(function() {
 
 	console.log('images.js linked!');
 
-	var updateCap = function(event) {
+	var updateCaption = function(event) {
 		event.preventDefault();
 		var item_id = event.target.getAttribute('id').split('_')[1];
 		var image_id = event.target.getAttribute('id').split('_')[3];
@@ -27,7 +27,7 @@ $('document').ready(function() {
 		event.preventDefault();
 		var item_id = event.target.getAttribute('id').split('_')[1];
 		var image_id = event.target.getAttribute('id').split('_')[3];
-		var image_div = event.target.parentNode.parentNode;
+		var image_div = event.target.parentNode.parentNode.parentNode;
 		$.ajax({
 			url: '/items/'+item_id+'/images/'+image_id,
 			type: 'DELETE',
@@ -40,11 +40,27 @@ $('document').ready(function() {
 				console.log("there was a problem deleting the image.");
 			}
 		});
-
-
 	};
 
-	$('.update_caption').bind('click', updateCap);
+	var setThumb = function() {
+		event.preventDefault();
+		var params = $(event.target.parentNode).serializeArray();
+		$.ajax({
+			url: 'set_thumb',
+			type: 'PATCH',
+			data: params,
+			dataType: 'json',
+			success: function() {
+				console.log('item thumb updated successfully');
+			},
+			error: function() {
+				console.log('there was a problem updating the item thumb');
+			}
+		});
+	};
+
+	$('.update_caption').bind('click', updateCaption);
 	$('.delete').bind('click', deleteImage);
+	$('.set-thumb').bind('click', setThumb);
 
 });

@@ -31,8 +31,12 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:item_id]) 
+    item = Item.find(params[:item_id])
     @image = item.images.find(params[:id])
+    if (item.thumb_image_id == @image.id) 
+      item[:thumb_image_id] = nil
+      item.save
+    end 
     @image.destroy
     render json: @image.to_json
   end

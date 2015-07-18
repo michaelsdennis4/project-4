@@ -61,10 +61,26 @@
 	}
 
 	.thumb {
-		width: 40%;
+		min-width: 450px;
 		height: 400px;
 		float: left;
 		margin-right: 40px;
+
+		img {
+			border: solid black 1px;
+		};
+	};
+
+	.no-image {
+		width: 40%;
+		height: 400px;
+		line-height: 400px;
+		display: block;
+		float: left;
+		font-size: 24px;
+		text-align: center;
+		margin-right: 40px;
+		background-color: rgba(200,200,200,1);
 	};
 
 	.blurb {

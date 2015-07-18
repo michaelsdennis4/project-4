@@ -31,8 +31,15 @@
 
 		<div class="preview">
 
-			<a href="/items/<%= item.id %>"><img class="thumb" src="http://www.marianiforos.com/la225thumb.jpg"/></a> 
-
+			<% if (item.thumb_image_id != nil) %>
+			  <% thumb = Image.find(item.thumb_image_id) %>
+				<a href="/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+			<% elsif (item.images.first) %>
+				<a href="/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('450x400#').url if item.images.first.image_stored? %></a> 
+			<% else %>
+				<div class="no-image">NO IMAGE</div>
+			<% end %>
+	
 			<div class="blurb">
 
 				<h4><%= item.code %></h4>

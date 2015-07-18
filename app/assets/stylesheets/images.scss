@@ -73,7 +73,7 @@
 			text-align: center;
 		};
 
-		form {
+		.caption {
 			width: 100%;
 			text-align: left;
 		};
@@ -87,8 +87,25 @@
 			display: inline-block;
 			float: right;
 			color: red;
-			margin-top: -28px;
+			margin-top: -30px;
 		};
+
+		.change-thumb {
+			width: 100%;
+			float: left;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 10px;	
+			text-align: center;
+
+			.set-thumb {
+				display: inline-block;
+				width: 160px;
+			};
+
+		};
+
+	
 
 	};
 
@@ -101,6 +118,7 @@
 		margin-bottom: 50px;
 		background-color: rgba(200,200,200,1);
 		border: solid black 1px;
+		overflow: scroll;
 	};
 
 	#upload {

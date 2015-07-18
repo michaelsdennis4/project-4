@@ -88,6 +88,13 @@ class ItemsController < ApplicationController
     render json: @item.to_json
   end
 
+  def set_thumb
+    @item = Item.find(params[:id])
+    @item[:thumb_image_id] = params[:image_id]
+    @item.save
+    render json: @image_to_json
+  end
+
   def destroy
     item = Item.find(params[:id])
     item.images.each do |image|

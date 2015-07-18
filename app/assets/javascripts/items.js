@@ -36,8 +36,37 @@ $('document').ready(function() {
 		});
 	};
 
+	var updateItem = function(event) {
+		event.preventDefault();
+		var form = event.target.parentNode.parentNode;
+		var item_id = form.parentNode.getAttribute("id").split("_")[1];
+		var params = $(form).serializeArray();
+		console.log(item_id);
+		console.log(params);
+		$.ajax({
+			url: '/items/'+item_id,
+			type: 'PATCH',
+			data: params,
+			dataType: 'json',
+			success: function() {
+				console.log('item updated successfully');
+
+			},
+			error: function() {
+				console.log('error updating item');
+			}
+
+		});
+	};
+
+	var deleteItem = function(event) {
+		if (window.confirm('Are you sure you want to delete this item?\r\nDeleting will remove this item and all its images and cannot be undone.') == false) { event.preventDefault(); };
+	};
+
 
 	$('.cat').bind('click', itemCat);
 	$('.key').bind('click', itemKey);
+	$('.update-item').bind('click', updateItem);
+	$('.delete').bind('click', deleteItem);
 
 });

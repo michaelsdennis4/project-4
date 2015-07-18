@@ -5,14 +5,14 @@ class ItemsController < ApplicationController
 	def index
     if (params[:category_id])
       @category = Category.find(params[:category_id])
-      @items = @category.items
+      @items = @category.items.where({is_available: true})
     elsif (params[:keyword_ids])
       @keywords = []
       @items = []
       params[:keyword_ids].each do |key_id|
         keyword = Keyword.find(key_id)
         @keywords.push(keyword)
-        keyword.items.each do |item|
+        keyword.items.where({is_available: true}).each do |item|
           if (!@items.include?(item))
             @items.push(item)
           end
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     elsif (params[:code])
       @items = Item.where({code: params[:code]})
     else
-      @items = Item.all
+      @items = Item.where({is_available: true})
     end
   end
 
@@ -45,12 +45,19 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])   
-    if item.update(item_params)
-    	redirect_to "/items/#{item.id}" 
-    else
-    	redirect_to "/items/#{item.id}/edit"
-    end
+    @item = Item.find(params[:id]) 
+    @item[:code] = params[:item][:code]
+    @item[:caption] = params[:item][:caption]
+    @item[:description] = params[:item][:description]
+    @item[:selling_price] = params[:item][:selling_price].to_i
+    @item[:purchase_price] = params[:item][:purchase_price].to_i
+    @item[:is_available] = params[:item][:is_available]
+    @item[:condition] = params[:item][:condition]
+    @item[:measurements] = params[:item][:measurements]
+    @item[:date_acquired] = params[:item][:date_acquired]
+    @item[:date_sold] = params[:item][:date_sold]
+    @item.save
+    render json: @item.to_json 
   end
 
   def edit
@@ -80,6 +87,21 @@ class ItemsController < ApplicationController
     end
     render json: @item.to_json
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.images.each do |image|
+      image.destroy
+    end
+    item.categories.each do |category|
+      item.categories.delete(category)
+    end
+    item.keywords.each do |keyword|
+      item.keywords.delete(keyword)
+    end
+    item.destroy
+    redirect_to "/items"
+  end 
 
   private
 

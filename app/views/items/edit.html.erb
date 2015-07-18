@@ -11,7 +11,7 @@
 
 	<div><h4><%= link_to "Manage Images for this Item", "/items/#{@item.id}/images" %></h4></div>
 
-	<div id="edit-item-form">
+	<div class="edit-item-form" id="item_<%= @item.id %>">
 
 		<%= form_for @item, url: {action: "update"} do |f| %>
 			
@@ -39,10 +39,15 @@
 			<%= f.label(:is_available, "Yes", {:class => "short"}) %>
 			<%= f.radio_button(:is_available, "false") %>
 			<%= f.label(:is_available, "No", {:class => "short"}) %><br>
-			
-			
-			<div id="submit"><%= f.submit "Update", {:class => "button"}  %></div>
+				
+			<div id="submit"><%= f.submit "Update", {:class => "update-item"}  %></div>
 		<% end %>
+
+		<form action="/items/<%= @item.id %>" method="post">
+			<input type="submit" class="delete" id="item_<%= @item.id %>" value="DELETE ITEM"/>
+			<input type="hidden" name="_method" value="delete"/>
+			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+		</form>
 
 	</div>
 

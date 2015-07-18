@@ -18,6 +18,9 @@ class KeywordsController < ApplicationController
 
 	def destroy
 		@keyword = Keyword.find(params[:id])
+		@keyword.items.each do |item|
+			@keyword.items.delete(item)
+		end 
 		@keyword.destroy
 		#need to delete from join table first
 		render json: @keyword.to_json

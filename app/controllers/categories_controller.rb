@@ -18,7 +18,9 @@ class CategoriesController < ApplicationController
 
 	def destroy
 		@category = Category.find(params[:id])
-		#need to delete entries from join table first
+		@category.items.each do |item|
+			@category.items.delete(item)
+		end
 		@category.destroy;
 		render json: @category.to_json
 	end

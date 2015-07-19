@@ -3,13 +3,15 @@ WDI - Project 4 - Final Project
 
 MariaNiforos.com
 
+https://maria-niforos-antiques.herokuapp.com/
+
 A web application for displaying and selling antique laces, linens, clothing, and textiles.
 
 The application will have public areas for searching and viewing items for sale, including high-resolution images.
 
 It will also have a secure private administrator login and areas for maintaining the site, including the creation, editing, and deleting of items for sale, as well as maintaining categories and keywords to facilitate searching.
 
-This project will use the following technologies:
+This project uses the following technologies:
 - **Ruby on Rails**
 - **Postgresql**
 - **Bcrpyt** https://en.wikipedia.org/wiki/Bcrypt - for secure, encrypted passwords
@@ -18,3 +20,6 @@ This project will use the following technologies:
 - **Amazon S3 API** http://aws.amazon.com/s3/ - for storage of high-resolution images
 - **jQuery** - for front-end functionality, including ajax calls
 - **Bootstrap** - http://getbootstrap.com/ - for image carousel
+ 
+
+Trello board, including wireframes, ERD, etc. - https://trello.com/b/SxwHMsbs/michael-dennis-project-4

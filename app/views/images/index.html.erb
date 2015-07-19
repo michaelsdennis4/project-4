@@ -27,7 +27,7 @@
 				<% elsif (@item.thumb_image_id == image.id) %>
 					<h5>[CURRENT THUMBNAIL]</h5>
 				<% else %>
-					<div class="change-thumb"><form action="/items/<% @item.id %>/set_thumb" method="post">
+					<div class="change-thumb"><form action="/set_thumb/<%= @item.id %>" method="post">
 						<input type="submit" class="set-thumb" value="SET AS THUMBNAIL"/>
 						<input type="hidden" name="image_id" value="<%= image.id %>"/>
 						<input type="hidden" name="_method" value="patch"/>

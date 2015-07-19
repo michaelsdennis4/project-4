@@ -89,10 +89,11 @@ class ItemsController < ApplicationController
   end
 
   def set_thumb
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
     @item[:thumb_image_id] = params[:image_id]
     @item.save
-    render json: @image_to_json
+    redirect_to "/items/#{@item.id}/images"
+    # render json: @image_to_json
   end
 
   def destroy

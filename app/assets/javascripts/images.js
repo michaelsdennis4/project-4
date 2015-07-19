@@ -42,25 +42,7 @@ $('document').ready(function() {
 		});
 	};
 
-	var setThumb = function() {
-		event.preventDefault();
-		var params = $(event.target.parentNode).serializeArray();
-		$.ajax({
-			url: 'set_thumb',
-			type: 'PATCH',
-			data: params,
-			dataType: 'json',
-			success: function() {
-				console.log('item thumb updated successfully');
-			},
-			error: function() {
-				console.log('there was a problem updating the item thumb');
-			}
-		});
-	};
-
 	$('.update_caption').bind('click', updateCaption);
 	$('.delete').bind('click', deleteImage);
-	$('.set-thumb').bind('click', setThumb);
 
 });

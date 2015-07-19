@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   patch '/items/:id/toggle_category/:category_id' => 'items#toggle_cat'
   patch '/items/:id/toggle_keyword/:keyword_id' => 'items#toggle_key'
 
-  patch '/items/:id/set_thumb' => 'items#set_thumb'
+  patch '/set_thumb/:item_id' => 'items#set_thumb'
 
   resources :items do
     resources :images, except: [:show, :edit]

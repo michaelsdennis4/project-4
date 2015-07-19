@@ -3,31 +3,55 @@
 };
 
 
-@media (min-width: 770px) {
+body.image {
+	background: none;
+	font-family: 'Cinzel', serif;
+	text-align: center;
 
-	body.image {
-		background: none;
-		font-family: 'Cinzel', serif;
+	.topnav {
+		font-size: 16px;
+		line-height: 20px;
 		text-align: center;
 
-		.topnav {
-			font-size: 16px;
-			line-height: 20px;
-			text-align: center;
+		a {
+			color: red;
+		};
 
-			a {
-				color: red;
-			};
+		a:hover {
+			color: red;
+		};
 
-			a:hover {
-				color: red;
-			};
-
-			a:visited {
-				color: red;
-			};
+		a:visited {
+			color: red;
 		};
 	};
+};
+
+a {
+	color: red;
+};
+
+a:hover {
+	color: red;
+};
+
+a:visited {
+	color: red;
+};
+
+h1.headline {
+	margin-top: 30px;
+	line-height: 50px;
+	font-size: 48px;
+	letter-spacing: 0.2em;
+};
+
+#image-container {
+	width: 90%;
+	float: center;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
 
 	a {
 		color: red;
@@ -41,122 +65,92 @@
 		color: red;
 	};
 
-	h1.headline {
-		margin-top: 30px;
-		line-height: 50px;
-		font-size: 48px;
-		letter-spacing: 0.2em;
+	h4 {
+		color: red;
+		letter-spacing: 0.1em;
+		text-align: center;
 	};
 
-	#image-container {
-		width: 90%;
-		float: center;
-		margin-top: 40px;
+	.caption {
+		width: 100%;
+		text-align: left;
+	};
+
+	input[type=text] {
+		font-family: 'Courier';
+		width: 1000px;
+	};
+
+	input[type=submit].delete {
+		display: inline-block;
+		float: right;
+		color: red;
+		margin-top: -30px;
+	};
+
+	.change-thumb {
+		width: 100%;
+		float: left;
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: 10px;	
+		text-align: center;
 
-		a {
-			color: red;
-		};
-
-		a:hover {
-			color: red;
-		};
-
-		a:visited {
-			color: red;
-		};
-
-		h4 {
-			color: red;
-			letter-spacing: 0.1em;
-			text-align: center;
-		};
-
-		.caption {
-			width: 100%;
-			text-align: left;
-		};
-
-		input[type=text] {
-			font-family: 'Courier';
-			width: 1000px;
-		};
-
-		input[type=submit].delete {
+		.set-thumb {
 			display: inline-block;
-			float: right;
-			color: red;
-			margin-top: -30px;
+			width: 160px;
 		};
-
-		.change-thumb {
-			width: 100%;
-			float: left;
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 10px;	
-			text-align: center;
-
-			.set-thumb {
-				display: inline-block;
-				width: 160px;
-			};
-
-		};
-
-	
 
 	};
 
-	.image-view {
-		max-width: 100%;
+
+
+};
+
+.image-view {
+	max-width: 100%;
+	float: center;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	background-color: rgba(200,200,200,1);
+	border: solid black 1px;
+	overflow: scroll;
+};
+
+#upload {
+	width: 50%;
+	float: center;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid black 1px;
+	padding: 10px;
+
+	input[type=file] {
+		width: 40%;
 		float: center;
-		margin-top: 5px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 50px;
-		background-color: rgba(200,200,200,1);
-		border: solid black 1px;
-		overflow: scroll;
+		font-family: 'Courier';
+		text-align: center;
+		margin-top: 20px;
 	};
 
-	#upload {
-		width: 50%;
-		float: center;
-		margin-top: 50px;
-		margin-left: auto;
-		margin-right: auto;
-		border: solid black 1px;
-		padding: 10px;
+	input[type=text] {
+		width: 90%;
+		font-family: 'Courier';
+		text-align: left;
+		margin-top: 20px;
+	};
 
-		input[type=file] {
-			width: 40%;
-			float: center;
-			margin-left: auto;
-			margin-right: auto;
-			font-family: 'Courier';
-			text-align: center;
-			margin-top: 20px;
-		};
+	input[type=submit] {
+		margin-top: 20px;
+	};
 
-		input[type=text] {
-			width: 90%;
-			font-family: 'Courier';
-			text-align: left;
-			margin-top: 20px;
-		};
-
-		input[type=submit] {
-			margin-top: 20px;
-		};
-
-		.file-upload {
-			margin-bottom: 20px;
-
-		}
-
-	}
-
+	.file-upload {
+		margin-bottom: 20px;
+	};
 
 };

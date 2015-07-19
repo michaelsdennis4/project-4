@@ -32,11 +32,12 @@ Rails.application.routes.draw do
     resources :images, except: [:show, :edit]
   end
 
-  resources :categories
+  resources :categories, only: [:create, :update, :destroy]
 
-  resources :keywords
+  resources :keywords, only: [:create, :update, :destroy]
 
   # add 404 page
+  get '/*path' => 'welcome#error'
 
 
   # Example of regular route:

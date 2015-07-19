@@ -2,7 +2,6 @@
 	margin: 0 auto;
 };
 
-
 body.image {
 	background: none;
 	font-family: 'Cinzel', serif;
@@ -48,7 +47,6 @@ h1.headline {
 
 #image-container {
 	width: 90%;
-	float: center;
 	margin-top: 40px;
 	margin-left: auto;
 	margin-right: auto;
@@ -85,7 +83,7 @@ h1.headline {
 		display: inline-block;
 		float: right;
 		color: red;
-		margin-top: -30px;
+		margin-top: -27px;
 	};
 
 	.change-thumb {
@@ -102,8 +100,6 @@ h1.headline {
 		};
 
 	};
-
-
 
 };
 

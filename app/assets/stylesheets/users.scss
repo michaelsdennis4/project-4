@@ -70,7 +70,6 @@ body.users {
 #user-list {
 	width: 50%;
 	min-height: 200px;
-	float: center;
 	margin-top: 200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -107,7 +106,6 @@ body.users {
 #new-user-form {
 	width: 40%;
 	height: 350px;
-	float: center;
 	margin-top: 200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -155,7 +153,6 @@ body.users {
 .user-form {
 	width: 40%;
 	height: 250px;
-	float: center;
 	margin-top: 200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -210,7 +207,6 @@ body.users {
 .change-password {
 	width: 40%;
 	height: 160px;
-	float: center;
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -251,15 +247,5 @@ body.users {
 		font-family: 'Courier';
 		color: red;
 	}
-
-};
-
-
-/*SMALL MEDIA
-====================================================================*/
-
-@media (max-width: 770px) {
-
-	
 
 };

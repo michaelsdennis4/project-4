@@ -311,7 +311,6 @@ body.welcome {
 		width: 25%;
 		float: left;
 		color: red;
-		float: center;
 		font-size: 12px;
 		margin-left: 10px;
 		margin-bottom: 10px;
@@ -321,7 +320,6 @@ body.welcome {
 		width: 25%;
 		float: left;
 		color: red;
-		float: center;
 		font-size: 12px;
 		margin-left: 10px;
 		margin-bottom: 10px;
@@ -330,7 +328,6 @@ body.welcome {
 	#add-key-cat {
 		width: 95%;
 		height: 75px;
-		float: center;
 		margin-left: auto;
 		margin-right: auto;
 		border: solid black 1px;
@@ -403,33 +400,3 @@ body.welcome {
 };
 
 
-/*SMALL MEDIA
-====================================================================*/
-
-@media (max-width: 770px) {
-
-	#categories {
-		width: 80%;
-		height: 440px;
-		float: center;
-		margin-left: 10%;
-		margin-right: 10%;
-	};
-
-	#keywords {
-		width: 80%;
-		height: 440px;
-		float: center;
-		margin-top: 20px;
-		margin-left: 10%;
-		margin-right: 10%;
-	};
-
-	#footer {
-		width: 100%;
-		height: 200px;
-		background-color: $bg-color;
-		position: fixed;
-	};
-
-};

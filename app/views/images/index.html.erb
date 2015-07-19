@@ -23,21 +23,22 @@
 			<div>
 				<h4>IMAGE <%= i+1 %></h4>
 				<% if (!(@item.thumb_image_id) && (i==0)) %>
-					<h5>[DEFAULT THUMB]</h5>
+					<div><h5>[DEFAULT THUMB]</h5></div>
 				<% elsif (@item.thumb_image_id == image.id) %>
-					<h5>[CURRENT THUMBNAIL]</h5>
+					<div><h5>[CURRENT THUMBNAIL]</h5></div>
 				<% else %>
 					<div class="change-thumb"><form action="/set_thumb/<%= @item.id %>" method="post">
 						<input type="submit" class="set-thumb" value="SET AS THUMBNAIL"/>
 						<input type="hidden" name="image_id" value="<%= image.id %>"/>
 						<input type="hidden" name="_method" value="patch"/>
 						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-					<form></div>
+					</form></div>
 				<% end %>
 
 				<div class="caption"><form action="/items/<%= @item.id %>/images/<%= image.id %>" method="post">
-					<label for="caption">CAPTION: <input type="text" name="caption" value="<%= image.caption %>"/></label>
-					<input type="submit" class="update_caption" id="item_<%= @item.id %>_img_<%= image.id %>"value="Update"/>
+					<label for="caption">CAPTION:</label>
+					<input type="text" name="caption" value="<%= image.caption %>"/>
+					<input type="submit" class="update-caption" id="item_<%= @item.id %>_img_<%= image.id %>"value="Update"/>
 					<input type="hidden" name="_method" value="patch"/>
 					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 				</form></div>

@@ -25,7 +25,7 @@
 	    <div class="item <% if (i==0) %> active <% end %>">
 	      <%= image_tag image.image.thumb('x600').url if image.image_stored? %>
 	      <div class="carousel-caption">
-	        ...
+          <h4><%= image.caption %></h4>
 	      </div>
 	    </div>
     <% end %>
@@ -41,6 +41,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<!-- Google Analytics -->
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

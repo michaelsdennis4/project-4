@@ -41,8 +41,6 @@ $('document').ready(function() {
 		var form = event.target.parentNode.parentNode;
 		var item_id = form.parentNode.getAttribute("id").split("_")[1];
 		var params = $(form).serializeArray();
-		console.log(item_id);
-		console.log(params);
 		$.ajax({
 			url: '/items/'+item_id,
 			type: 'PATCH',

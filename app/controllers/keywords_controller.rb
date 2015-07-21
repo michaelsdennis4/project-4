@@ -22,7 +22,6 @@ class KeywordsController < ApplicationController
 			@keyword.items.delete(item)
 		end 
 		@keyword.destroy
-		#need to delete from join table first
 		render json: @keyword.to_json
 	end
 

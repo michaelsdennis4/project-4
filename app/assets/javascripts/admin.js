@@ -53,9 +53,7 @@ $('document').ready(function() {
 			data: params,
 			dataType: 'json',
 			success: function(result) {
-				console.log(result);
 				var output = Mustache.render($('#cat-template').html(), result);
-				console.log(output);
         $('#cat-list').append(output);
         $(".update-cat").bind('click', updateCat);
 				$(".delete-cat").bind('click', deleteCat);
@@ -117,9 +115,7 @@ $('document').ready(function() {
 			data: params,
 			dataType: 'json',
 			success: function(result) {
-				console.log(result);
 				var output = Mustache.render($('#key-template').html(), result);
-				console.log(output);
         $('#key-list').append(output);
         $(".update-key").bind('click', updateKey);
 				$(".delete-key").bind('click', deleteKey);

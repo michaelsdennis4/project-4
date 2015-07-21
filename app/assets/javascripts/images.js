@@ -9,7 +9,6 @@ $('document').ready(function() {
 		var item_id = event.target.getAttribute('id').split('_')[1];
 		var image_id = event.target.getAttribute('id').split('_')[3];
 		var params = $(event.target.parentNode).serializeArray();
-		console.log(params);
 		$.ajax({
 			url: '/items/'+item_id+'/images/'+image_id,
 			type: 'PATCH',

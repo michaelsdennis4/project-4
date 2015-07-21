@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
       session[:is_admin] = user.is_admin
       redirect_to "/" #dashboard
     else
-      # rerender the form
       redirect_to '/login'
     end
   end

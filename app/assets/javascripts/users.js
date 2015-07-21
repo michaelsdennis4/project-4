@@ -34,13 +34,12 @@ $('document').ready(function() {
 			data: params,
 			dataType: 'json',
 			success: function(result) {
-				console.log('success');
+				console.log('password successfully changed');
 				$('#message').text(result);
 				$('.pass').val("");
 				$('.newpass').val("");
 			},
 			error: function() {
-				console.log('error');
 				$('#message').text('ERROR: Password NOT changed.');
 				$('.pass').val("");
 				$('.newpass').val("");

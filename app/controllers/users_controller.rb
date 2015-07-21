@@ -57,7 +57,6 @@ class UsersController < ApplicationController
     render json: @message.to_json
   end
 
-
   private
 
   def user_params

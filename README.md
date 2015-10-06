@@ -7,9 +7,11 @@ https://maria-niforos-antiques.herokuapp.com/
 
 A web application for displaying and selling antique laces, linens, clothing, and textiles.
 
-The application will have public areas for searching and viewing items for sale, including high-resolution images.
+The application has public areas for searching and viewing items for sale, including the display of high-resolution images.
 
-It will also have a secure private administrator login and areas for maintaining the site, including the creation, editing, and deleting of items for sale, as well as maintaining categories and keywords to facilitate searching.
+It will also have a secure private administrator login and areas for maintaining the site, including the creation, editing, and deleting of items for sale, uploading images, as well as maintaining categories and keywords to facilitate searching.
+
+Trello board, including wireframes, ERD, etc. - https://trello.com/b/SxwHMsbs/michael-dennis-project-4
 
 This project uses the following technologies:
 - **Ruby on Rails**
@@ -19,7 +21,5 @@ This project uses the following technologies:
 - **Image Magick** http://www.imagemagick.org/script/index.php - manages the resizing of images on-the-fly for rendering purposes
 - **Amazon S3 API** http://aws.amazon.com/s3/ - for storage of high-resolution images
 - **jQuery** - for front-end functionality, including ajax calls
+- **Mustache.js** http://mustache.github.io/ - for front-end templating
 - **Bootstrap** - http://getbootstrap.com/ - for image carousel
- 
-
-Trello board, including wireframes, ERD, etc. - https://trello.com/b/SxwHMsbs/michael-dennis-project-4

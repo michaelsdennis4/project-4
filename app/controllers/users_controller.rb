@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new
-    if user.update(user_params)
+    if (params[:user][:password].length >= 6) && (user.update(user_params))
       redirect_to "/users"
     else
       redirect_to '/users/new'
@@ -47,11 +47,13 @@ class UsersController < ApplicationController
   def change_pw
     user = User.find_by({email: params[:user][:email]})
     @message = 'ERROR: Password NOT changed!'
-    if (user && user.authenticate(params[:user][:password]))
-      if (!params[:user][:new_password].nil? && !params[:user][:new_password].empty?)
-        user.password = params[:user][:new_password] unless 
+    if (user && user.authenticate(params[:user][:old_password]))
+      if (params[:user][:new_password].length >= 6)
+        user.password = params[:user][:new_password]
         user.save
         @message = 'Password changed successfully!'
+      else
+        @message = 'ERROR: Password must be at least 6 characters!'
       end
     end
     render json: @message.to_json

@@ -45,25 +45,27 @@ $('document').ready(function() {
 
 	var newCat = function(event) {
 		event.preventDefault();
-		var form = event.target.parentNode;
-		var params = $(form).serializeArray();
-		$.ajax({
-			url: '/categories',
-			type: 'POST',
-			data: params,
-			dataType: 'json',
-			success: function(result) {
-				var output = Mustache.render($('#cat-template').html(), result);
-        $('#cat-list').append(output);
-        $(".update-cat").bind('click', updateCat);
-				$(".delete-cat").bind('click', deleteCat);
-				$(".cat-name").val("");			
-				console.log("category successfully added");
-			},
-			error: function() {
-				console.log("error adding category");
-			}
-		});
+		if ($("#cat-name").val().length > 0) {
+			var form = event.target.parentNode;
+			var params = $(form).serializeArray();
+			$.ajax({
+				url: '/categories',
+				type: 'POST',
+				data: params,
+				dataType: 'json',
+				success: function(result) {
+					var output = Mustache.render($('#cat-template').html(), result);
+	        $('#cat-list').append(output);
+	        $(".update-cat").bind('click', updateCat);
+					$(".delete-cat").bind('click', deleteCat);
+					$("#cat-name").val("");			
+					console.log("category successfully added");
+				},
+				error: function() {
+					console.log("error adding category");
+				}
+			});
+		};
 	};
 
 		var updateKey = function(event) {
@@ -107,34 +109,36 @@ $('document').ready(function() {
 
 	var newKey = function(event) {
 		event.preventDefault();
-		var form = event.target.parentNode;
-		var params = $(form).serializeArray();
-		$.ajax({
-			url: '/keywords',
-			type: 'POST',
-			data: params,
-			dataType: 'json',
-			success: function(result) {
-				var output = Mustache.render($('#key-template').html(), result);
-        $('#key-list').append(output);
-        $(".update-key").bind('click', updateKey);
-				$(".delete-key").bind('click', deleteKey);
-				$(".key-name").val("");			
-				console.log("keyword successfully added");
-			},
-			error: function() {
-				console.log("error adding keyword");
-			}
-		});
+		if ($("#key-phrase").val().length > 0) {
+			var form = event.target.parentNode;
+			var params = $(form).serializeArray();
+			$.ajax({
+				url: '/keywords',
+				type: 'POST',
+				data: params,
+				dataType: 'json',
+				success: function(result) {
+					var output = Mustache.render($('#key-template').html(), result);
+	        $('#key-list').append(output);
+	        $(".update-key").bind('click', updateKey);
+					$(".delete-key").bind('click', deleteKey);
+					$("#key-phrase").val("");			
+					console.log("keyword successfully added");
+				},
+				error: function() {
+					console.log("error adding keyword");
+				}
+			});
+		};
 	};
 
-	$(".update-cat").bind('click', updateCat);
-	$(".delete-cat").bind('click', deleteCat);
-	$(".new-cat").bind('click', newCat);
+	$(".update-cat").on('click', updateCat);
+	$(".delete-cat").on('click', deleteCat);
+	$(".new-cat").on('click', newCat);
 
-	$(".update-key").bind('click', updateKey);
-	$(".delete-key").bind('click', deleteKey);
-	$(".new-key").bind('click', newKey);
+	$(".update-key").on('click', updateKey);
+	$(".delete-key").on('click', deleteKey);
+	$(".new-key").on('click', newKey);
 
 });
 

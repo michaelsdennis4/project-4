@@ -338,5 +338,31 @@ h1.headline {
 	text-align: left;
 };
 
+#carousel-override {
+	color: rgba(255,100,100,1);
+	background-color: rgba(255,255,255,0);
+	background-image: none;
+	opacity: 1;
+};
+
+#carousel-override:hover {
+	color: rgba(255,0,0,1);
+	background-color: rgba(255,255,255,0);
+	background-image: none;
+	opacity: 1;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

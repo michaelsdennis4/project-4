@@ -9,7 +9,7 @@
 
 	<h1 class="headline">NEW ITEM</h1>
 
-	<div id="new-item-form" id="new">
+	<div class="item-form" id="new">
 
 		<%= form_for @item, url: {action: "create"} do |f| %>
 			
@@ -30,13 +30,13 @@
 			<%= f.label :selling_price, "Selling Price" %>
 			<%= f.text_field :selling_price, {:class => "short"} %>
 			<%= f.label :description, "* Description", {:class => "large"} %>
-			<%= f.text_field :description, {:class => "textbox"} %>
+			<%= f.text_area :description %>
 
 			<%= f.label :is_available, "Item Available?" %>
 			<%= f.radio_button(:is_available, "true", {:class => "very_short"}) %>
 			<%= f.label(:is_available, "Yes", {:class => "very_short"}) %>
 			<%= f.radio_button(:is_available, "false", {:class => "very_short"}) %>
-			<%= f.label(:is_available, "No", {:class => "very_short"}) %><br>
+			<%= f.label(:is_available, "No", {:class => "very_short"}) %>
 			
 			<div id="submit"><%= f.submit "Create", {:class => "button"}  %></div>
 		<% end %>

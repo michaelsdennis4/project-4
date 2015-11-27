@@ -6,6 +6,7 @@
 #  phrase     :string           not null
 #  created_at :datetime
 #  updated_at :datetime
+#  sequence   :integer
 #
 
 class Keyword < ActiveRecord::Base

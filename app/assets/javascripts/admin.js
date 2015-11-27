@@ -147,6 +147,12 @@ $('document').ready(function() {
 		$('#cat-list').disableSelection();
 	});
 
+	$('#cat-list').on('sortstop', function(event) {
+		console.log('list sorted');
+		//ajax call to re-sort list on server
+
+	});
+
 });
 
 

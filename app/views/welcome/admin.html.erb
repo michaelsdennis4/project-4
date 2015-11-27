@@ -16,7 +16,7 @@
 		<h4>CATEGORIES</h4>
 
 		<script id="cat-template" type="mustache">
-			<div>
+			<div class="category" id="cat_{{ id }}">
 				<form action="/categories/{{ id }}" method="post">
 					<input type="text" name="name" value="{{ name }}"/>
 					<input type="submit" class="update-cat" id="cat_{{ id }}" value="Update"/>
@@ -31,10 +31,17 @@
 			</div>
 		</script>
 
+		<script type="text/javascript">
+			$(function() {
+	 			$('#cat-list').sortable();
+				$('#cat-list').disableSelection();
+	  	});
+		</script>
+
 		<div id="cat-list">
 
 			<% @categories.each do |category| %>
-				<div>
+				<div class="category" id="cat-<%= category.id %>">
 					<form action="/categories/<%= category.id %>" method="post">
 						<input type="text" name="name" value="<%= category.name %>"/>
 						<input type="submit" class="update-cat" id="cat_<%= category.id %>" value="Update"/>

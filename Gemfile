@@ -13,6 +13,7 @@ gem 'aws-sdk', '~> 2'
 gem 'mustache-js-rails', '~> 1.1.0'
 gem 'rails_12factor'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dragonfly', '~> 1.0.10'

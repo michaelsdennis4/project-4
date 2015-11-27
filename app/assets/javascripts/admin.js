@@ -140,6 +140,13 @@ $('document').ready(function() {
 	$(".delete-key").on('click', deleteKey);
 	$(".new-key").on('click', newKey);
 
+	//UI
+
+	$(function() {
+		$('#cat-list').sortable();
+		$('#cat-list').disableSelection();
+	});
+
 });
 
 

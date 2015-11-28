@@ -26,23 +26,6 @@ body.welcome {
 
 	};
 
-	#admin {
-
-		color: black;
-
-		a {
-			color: red;
-		};
-
-		a:hover {
-			color: red;
-		};
-
-		a:visited {
-			color: red;
-		};
-
-	};
 };
 
 #header {
@@ -65,15 +48,6 @@ body.welcome {
 		letter-spacing: 0.2em;
 	};
 
-};
-
-.category {
-	width: 95%;
-	height: 60px;
-	margin-left: 10px;
-	margin-bottom: 5px;
-	padding: 5px;
-	border: solid gray 1px;
 };
 
 #categories {
@@ -113,15 +87,6 @@ body.welcome {
 
 	};
 
-};
-
-.keyword {
-	width: 95%;
-	height: 60px;
-	margin-left: 10px;
-	margin-bottom: 5px;
-	padding: 5px;
-	border: solid gray 1px;
 };
 
 #keywords {
@@ -280,132 +245,6 @@ body.welcome {
 	};
 };
 
-#manage-cat-keys {
-	width: 25%;
-	height: 600px;
-	float: left;
-	margin-top: 100px;
-	margin-left: 2%;
-	margin-right: 0;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
-
-	#cat-list {
-		width: 95%;
-		height: 460px;	
-		margin-bottom: 10px;
-		text-align: left;
-		overflow: scroll;
-	};
-
-	#key-list {
-		width: 95%;
-		height: 460px;	
-		margin-bottom: 10px;
-		text-align: left;
-		overflow: scroll;
-	};
-
-	input[type=text] {
-		width: 65%;
-		float: left;
-		margin-left: 10px;
-		margin-bottom: 10px;
-		font-family: Courier;
-	};
-
-	input[type=submit] {
-		width: 25%;
-		float: left;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 5px;
-	};
-
-	input[type=submit].delete-cat {
-		width: 25%;
-		float: left;
-		color: red;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 10px;
-	};
-
-	input[type=submit].delete-key {
-		width: 25%;
-		float: left;
-		color: red;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 10px;
-	};
-
-	#add-key-cat {
-		width: 95%;
-		height: 75px;
-		margin-left: auto;
-		margin-right: auto;
-		border: solid black 1px;
-	};
-
-};
-
-#manage-items {
-	width: 40%;
-	height: 185px;
-	float: left;
-	margin-top: 100px;
-	margin-left: 2%;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
-
-	#find-item {
-		label {
-			margin-right: 5px;
-		}
-		input[type=text] {
-			font-family: 'Courier';
-		};
-	};
-
-};
-
-#admin-profile {
-	width: 40%;
-	height: 150px;
-	float: left;
-	margin-top: 20px;
-	margin-left: 2%;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
-};
-
-#google-analytics {
-	width: 40%;
-	height: 225px;
-	float: left;
-	margin-top: 20px;
-	margin-left: 2%;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
-};
-
 #error {
 	width: 80%;
 	margin-top: 50px;
@@ -417,5 +256,3 @@ body.welcome {
 	background-color: $bg-color;
 	padding: 20px;
 };
-
-

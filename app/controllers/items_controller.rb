@@ -27,8 +27,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @categories = Category.all.order(:name)
-    @keywords = Keyword.all.order(:phrase)
   end
 
   def create
@@ -62,8 +60,8 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id]) 
-    @categories = Category.all.order(:name)
-    @keywords = Keyword.all.order(:phrase)
+    @categories = Category.all.order(:sequence)
+    @keywords = Keyword.all.order(:sequence)
   end
 
   def toggle_cat

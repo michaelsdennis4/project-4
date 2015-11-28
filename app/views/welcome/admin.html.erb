@@ -38,7 +38,7 @@
 		<div id="cat-list">
 
 			<% @categories.each do |category| %>
-				<div class="category" id="cat-<%= category.id %>">
+				<div class="category" id="cat_<%= category.id %>">
 					<form action="/categories/<%= category.id %>" method="post">
 						<input type="text" name="name" value="<%= category.name %>"/>
 						<input type="submit" class="update-cat" id="cat_<%= category.id %>" value="Update"/>
@@ -69,7 +69,7 @@
 		<h4>KEYWORDS</h4>
 
 		<script id="key-template" type="mustache">
-			<div>
+			<div class="keyword" id="key_{{ id }}">
 				<form action="/keywords/{{ id }}" method="post">
 					<input type="text" name="phrase" value="{{ phrase }}"/>
 					<input type="submit" class="update-key" id="key_{{ id }}" value="Update"/>
@@ -87,7 +87,7 @@
 		<div id="key-list">
 
 			<% @keywords.each do |keyword| %>
-				<div>
+				<div class="keyword" id="key_<%= keyword.id %>">
 					<form action="/keywords/<%= keyword.id %>" method="post">
 						<input type="text" name="phrase" value="<%= keyword.phrase %>"/>
 						<input type="submit" class="update-key" id="key_<%= keyword.id %>" value="Update"/>

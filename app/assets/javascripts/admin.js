@@ -6,7 +6,7 @@ $('document').ready(function() {
 
 	var updateCat = function(event) {
 		event.preventDefault();
-		id = event.target.getAttribute("id").split("_")[1];
+		var id = event.target.getAttribute("id").split("_")[1];
 		var params = $(event.target.parentElement).serializeArray();
 		$.ajax({
 			url: '/categories/'+id,
@@ -70,7 +70,7 @@ $('document').ready(function() {
 
 		var updateKey = function(event) {
 		event.preventDefault();
-		id = event.target.getAttribute("id").split("_")[1];
+		var id = event.target.getAttribute("id").split("_")[1];
 		var params = $(event.target.parentElement).serializeArray();
 		$.ajax({
 			url: '/keywords/'+id,
@@ -147,11 +147,51 @@ $('document').ready(function() {
 		$('#cat-list').disableSelection();
 	});
 
-	$('#cat-list').on('sortstop', function(event) {
-		console.log('list sorted');
-		//ajax call to re-sort list on server
-
+	$(function() {
+		$('#key-list').sortable();
+		$('#key-list').disableSelection();
 	});
+
+	$('#cat-list').on('sortstop', function(event) {
+		var categories = document.querySelectorAll('.category');
+		//ajax call to re-sort list on server
+		if ((categories) && (categories.length > 0)) {
+			var id;
+			var data;
+			for (var i=0; i < categories.length; i++) {
+				id = categories[i].getAttribute('id').split('_')[1];
+				data = {sequence: i+1};
+				$.ajax({
+					url: '/categories/'+id,
+					type: 'patch',
+					data: JSON.stringify(data),
+          contentType: 'application/json',
+					dataType: 'json'
+				});
+			};
+		};
+	});
+
+	$('#key-list').on('sortstop', function(event) {
+		var keywords = document.querySelectorAll('.keyword');
+		//ajax call to re-sort list on server
+		if ((keywords) && (keywords.length > 0)) {
+			var id;
+			var data;
+			for (var i=0; i < keywords.length; i++) {
+				id = keywords[i].getAttribute('id').split('_')[1];
+				data = {sequence: i+1};
+				$.ajax({
+					url: '/keywords/'+id,
+					type: 'patch',
+					data: JSON.stringify(data),
+          contentType: 'application/json',
+					dataType: 'json'
+				});
+			};
+		};
+	});
+
 
 });
 

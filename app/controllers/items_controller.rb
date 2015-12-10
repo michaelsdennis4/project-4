@@ -39,6 +39,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    if (params[:category_id])
+      @category = Category.find(params[:category_id])
+    end
     @item = Item.find(params[:id])
   end
 

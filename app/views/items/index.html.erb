@@ -1,7 +1,7 @@
 <body class="item">
 <% if (session[:is_admin] == 'true') %>
 
-	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/items/new">ADD NEW ITEM</a> | <a href="/admin">ADMIN CENTER</a></h5>
+	<h5 class="topnav">You are logged in as: <%= session[:user_name] %> | <a href="/">HOME</a> | <a href="/admin">ADMIN CENTER</a></h5>
 
 <% else %>
 	<h5 class="topnav"><a href="/">HOME</a></h5>
@@ -33,9 +33,17 @@
 
 			<% if (item.thumb_image_id != nil) %>
 			  <% thumb = Image.find(item.thumb_image_id) %>
-				<a href="/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+			  <% if (@category) %>
+					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+				<% else %>
+					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+				<% end %>
 			<% elsif (item.images.first) %>
-				<a href="/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('450x400#').url if item.images.first.image_stored? %></a> 
+				<% if (@category) %>
+					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('450x400#').url if item.images.first.image_stored? %></a> 
+				<% else %>
+					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('450x400#').url if item.images.first.image_stored? %></a> 
+				<% end %>
 			<% else %>
 				<div class="no-image">NO IMAGE</div>
 			<% end %>
@@ -44,7 +52,11 @@
 
 				<h4><%= item.code %></h4>
 
-				<h3><a href="/items/<%= item.id %>"><%= item.caption %></a></h3>
+				<% if (@category) %>
+					<h3><a href="/categories/<%= @category.id %>/items/<%= item.id %>"><%= item.caption %></a></h3>
+				<% else %>
+					<h3><a href="/items/<%= item.id %>"><%= item.caption %></a></h3>
+				<% end %>
 
 				<p><%= item.description %></p>
 

@@ -13,7 +13,7 @@
 		<!-- <p><a href="/items">ALL ITEMS</a></p> -->
 
 		<% @categories.each do |category| %>
-			<p><a href="/items?category_id=<%= category.id %>"><%= category.name.upcase %></a></p>
+			<p><a href="categories/<%= category.id %>/items"><%= category.name.upcase %></a></p>
 		<% end %>
 
 	</div>

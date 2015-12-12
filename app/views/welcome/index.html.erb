@@ -36,6 +36,12 @@
 	  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 	</form> 
 
+	<form action="/items" method="get">
+		<input type="text" name="keyword" placeholder="Enter a keyword"/>
+		<input type="submit" value="search"/>
+		<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+	</form>
+
 </div> -->
 
 <div id="footer">

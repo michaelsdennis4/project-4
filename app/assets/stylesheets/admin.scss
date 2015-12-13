@@ -66,14 +66,12 @@ body.admin {
 
 	};
 
-	#manage-cat-keys {
-		width: 25%;
+	.manage-cat-keys {
+		width: 90%;
 		height: 600px;
-		float: left;
-		margin-top: 100px;
-		margin-left: 2%;
-		margin-right: 0;
-		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
 		background-color: $bg-color;
 		border: solid black 1px;
 
@@ -169,12 +167,20 @@ body.admin {
 
 	};
 
-	#manage-items {
-		width: 40%;
-		height: 185px;
-		float: left;
+	#manage-cats {
 		margin-top: 100px;
-		margin-left: 2%;
+	};
+
+	#manage-keys {
+		margin-top: 20px;
+	};
+
+	#manage-items {
+		width: 90%;
+		height: 185px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
 		background-color: $bg-color;
 		border: solid black 1px;
 
@@ -195,11 +201,12 @@ body.admin {
 	};
 
 	#admin-profile {
-		width: 40%;
+		width: 90%;
 		height: 150px;
-		float: left;
 		margin-top: 20px;
-		margin-left: 2%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
 		background-color: $bg-color;
 		border: solid black 1px;
 
@@ -221,6 +228,41 @@ body.admin {
 			color: black;
 			letter-spacing: 0.1em;
 		};
+	};
+
+	/*=======================================================================*/
+
+	@media (min-width:500px) {
+
+		.manage-cat-keys {
+			width: 25%;
+			float: left;
+			margin-left: 2%;
+			margin-right: 0;
+			margin-bottom: 20px;
+		};
+
+		#manage-cats {
+			margin-top: 100px;
+		};
+
+		#manage-keys {
+			margin-top: 100px;
+		};
+
+		#manage-items {
+			width: 40%;
+			float: left;
+			margin-top: 100px;
+			margin-left: 2%;
+		};
+
+		#admin-profile {
+			width: 40%;
+			float: left;
+			margin-left: 2%;
+		};
+
 	};
 
 };

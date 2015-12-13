@@ -2,7 +2,7 @@ $bg-color: rgba(255,255,255,0.9);
 
 body.admin {
 	background-image: url("https://s3.amazonaws.com/maria-niforos-antiques/background.jpg");
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: 100%;
 	font-family: 'Cinzel', serif;
 	text-align: center;
@@ -13,24 +13,6 @@ body.admin {
 		text-align: center;
 
 		a {
-			color: white;
-		};
-
-		a:hover {
-			color: white;
-		};
-
-		a:visited {
-			color: white;
-		};
-
-	};
-
-	#admin {
-
-		color: black;
-
-		a {
 			color: red;
 		};
 
@@ -42,177 +24,203 @@ body.admin {
 			color: red;
 		};
 
-	};
-};
+		#admin {
 
-#header {
-	width: 100%;
-	border: 0;
-	background-color: $bg-color;
-	position: absolute;
-	top: 0;
+			color: black;
 
-	h1 {
-		line-height: 50px;
-		font-size: 48px;
-		letter-spacing: 0.2em;
-	};
+			a {
+				color: red;
+			};
 
-	h3 { 
-		line-height: 20px;
-		font-size: 20px;
-		color: red;
-		letter-spacing: 0.2em;
+			a:hover {
+				color: red;
+			};
+
+			a:visited {
+				color: red;
+			};
+
+		};
 	};
 
-};
+	#header {
+		width: 100%;
+		border: 0;
+		background-color: $bg-color;
+		position: absolute;
+		top: 0;
+		border-bottom: solid black 1px;
 
-#manage-cat-keys {
-	width: 25%;
-	height: 600px;
-	float: left;
-	margin-top: 100px;
-	margin-left: 2%;
-	margin-right: 0;
-	background-color: $bg-color;
+		h1 {
+			line-height: 50px;
+			font-size: 48px;
+			letter-spacing: 0.2em;
+		};
 
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
-
-	#cat-list {
-		width: 96%;
-		height: 460px;
-		margin-left: 10px;	
-		margin-bottom: 10px;
-		text-align: left;
-		overflow: scroll;
-
-		.category {
-			width: 97%;
-			height: 60px;
-			margin-left: 0;
-			margin-right: auto;
-			margin-bottom: 5px;
-			padding: 5px;
-			border: solid gray 1px;
+		h3 { 
+			line-height: 20px;
+			font-size: 20px;
+			color: red;
+			letter-spacing: 0.2em;
 		};
 
 	};
 
-	#key-list {
-		width: 96%;
-		height: 460px;
-		margin-left: 10px;	
-		margin-bottom: 10px;
-		text-align: left;
-		overflow: scroll;
-
-		.keyword {
-			width: 97%;
-			height: 60px;
-			margin-left: 0;
-			margin-right: auto;
-			margin-bottom: 5px;
-			padding: 5px;
-			border: solid gray 1px;
-		};
-
-	};
-
-	input[type=text] {
-		width: 65%;
-		float: left;
-		margin-left: 10px;
-		margin-bottom: 10px;
-		font-family: Courier;
-	};
-
-	input[type=submit] {
+	#manage-cat-keys {
 		width: 25%;
+		height: 600px;
 		float: left;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 5px;
-	};
-
-	input[type=submit].delete-cat {
-		width: 25%;
-		float: left;
-		color: red;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 10px;
-	};
-
-	input[type=submit].delete-key {
-		width: 25%;
-		float: left;
-		color: red;
-		font-size: 12px;
-		margin-left: 10px;
-		margin-bottom: 10px;
-	};
-
-	#add-key-cat {
-		width: 95%;
-		height: 75px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-top: 100px;
+		margin-left: 2%;
+		margin-right: 0;
+		margin-bottom: 20px;
+		background-color: $bg-color;
 		border: solid black 1px;
-	};
 
-};
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
 
-#manage-items {
-	width: 40%;
-	height: 185px;
-	float: left;
-	margin-top: 100px;
-	margin-left: 2%;
-	background-color: $bg-color;
+		#cat-list {
+			width: 96%;
+			height: 460px;
+			margin-left: 10px;	
+			margin-bottom: 10px;
+			text-align: left;
+			overflow: scroll;
 
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
+			.category {
+				width: 97%;
+				height: 60px;
+				margin-left: 0;
+				margin-right: auto;
+				margin-bottom: 5px;
+				padding: 5px;
+				border: solid gray 1px;
+				background-color: rgba(255,255,255,0.8);
+			};
 
-	#find-item {
-		label {
-			margin-right: 5px;
-		}
+		};
+
+		#key-list {
+			width: 96%;
+			height: 460px;
+			margin-left: 10px;	
+			margin-bottom: 10px;
+			text-align: left;
+			overflow: scroll;
+
+			.keyword {
+				width: 97%;
+				height: 60px;
+				margin-left: 0;
+				margin-right: auto;
+				margin-bottom: 5px;
+				padding: 5px;
+				border: solid gray 1px;
+				background-color: rgba(255,255,255,0.8);
+			};
+
+		};
+
 		input[type=text] {
-			font-family: 'Courier';
+			width: 65%;
+			float: left;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			font-family: Courier;
+		};
+
+		input[type=submit] {
+			width: 25%;
+			float: left;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 5px;
+		};
+
+		input[type=submit].delete-cat {
+			width: 25%;
+			float: left;
+			color: red;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+		};
+
+		input[type=submit].delete-key {
+			width: 25%;
+			float: left;
+			color: red;
+			font-size: 12px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+		};
+
+		#add-key-cat {
+			width: 95%;
+			height: 75px;
+			margin-left: auto;
+			margin-right: auto;
+			border: solid black 1px;
+			background-color: rgba(255,255,255,0.8);
+		};
+
+	};
+
+	#manage-items {
+		width: 40%;
+		height: 185px;
+		float: left;
+		margin-top: 100px;
+		margin-left: 2%;
+		background-color: $bg-color;
+		border: solid black 1px;
+
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
+
+		#find-item {
+			label {
+				margin-right: 5px;
+			}
+			input[type=text] {
+				font-family: 'Courier';
+			};
+		};
+
+	};
+
+	#admin-profile {
+		width: 40%;
+		height: 150px;
+		float: left;
+		margin-top: 20px;
+		margin-left: 2%;
+		background-color: $bg-color;
+		border: solid black 1px;
+
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
 		};
 	};
 
-};
+	#google-analytics {
+		width: 40%;
+		height: 225px;
+		float: left;
+		margin-top: 20px;
+		margin-left: 2%;
+		background-color: $bg-color;
 
-#admin-profile {
-	width: 40%;
-	height: 150px;
-	float: left;
-	margin-top: 20px;
-	margin-left: 2%;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
+		h4 {
+			color: black;
+			letter-spacing: 0.1em;
+		};
 	};
-};
 
-#google-analytics {
-	width: 40%;
-	height: 225px;
-	float: left;
-	margin-top: 20px;
-	margin-left: 2%;
-	background-color: $bg-color;
-
-	h4 {
-		color: black;
-		letter-spacing: 0.1em;
-	};
 };

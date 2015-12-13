@@ -140,7 +140,7 @@ body.welcome {
 
 	#footer {
 		width: 100%;
-		min-height: 60px;
+		min-height: 40px;
 		background-color: $bg-color;
 		position: fixed;
 		bottom: 0;
@@ -181,6 +181,15 @@ body.welcome {
 		font-size: 18px;
 		background-color: $bg-color;
 		padding: 20px;
+		border: solid black 1px;
+
+		h2 {
+			margin-top: 5px;
+			margin-bottom: 15px;
+			line-height: 20px;
+			color: black;
+			text-align: center;
+		};
 
 		#tagline {
 			font-size: 16px;
@@ -199,14 +208,6 @@ body.welcome {
 			color: red;
 		};
 
-		h2 {
-			margin-top: 5px;
-			margin-bottom: 15px;
-			line-height: 20px;
-			color: red;
-			text-align: center;
-		};
-
 		a {
 			color: red;
 		};
@@ -222,6 +223,7 @@ body.welcome {
 		font-size: 18px;
 		background-color: $bg-color;
 		padding: 20px;
+		border: solid black 1px;
 
 		label {
 			letter-spacing: 0.1em;
@@ -263,6 +265,7 @@ body.welcome {
 		color: red;
 		background-color: $bg-color;
 		padding: 20px;
+		border: solid black 1px;
 	};
 
 /*=======================================================================*/
@@ -287,10 +290,6 @@ body.welcome {
 				font-size: 20px;
 			};
 
-		};
-
-		#footer {
-			min-height: 40px;
 		};
 
 		#about {

@@ -30,10 +30,11 @@ body.welcome {
 	#header {
 		width: 100%;
 		border: 0;
-		height: 130px;
+		height: 140px;
 		background-color: $bg-color;
 		position: absolute;
 		top: 0;
+		border-bottom: solid black 1px;
 
 		h1 {
 			line-height: 50px;
@@ -62,6 +63,7 @@ body.welcome {
 		margin-bottom: 100px;
 		padding: 20px;
 		background-color: $bg-color;
+		border: solid black 1px;
 
 		h5 {
 			line-height: 40px;
@@ -142,6 +144,7 @@ body.welcome {
 		background-color: $bg-color;
 		position: fixed;
 		bottom: 0;
+		border-top: solid black 1px;
 
 		h5 {
 			line-height: 20px;

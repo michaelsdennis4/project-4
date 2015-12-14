@@ -1,251 +1,303 @@
 $bg-color: rgba(255,255,255,0.9);
 
 body.users {
-	background-image: url("https://s3.amazonaws.com/maria-niforos-antiques/background.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	font-family: 'Cinzel', serif;
-	text-align: center;
 
-	.topnav {
-		font-size: 16px;
-		line-height: 20px;
+	@media all, handheld, (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+		background-image: url("https://s3.amazonaws.com/maria-niforos-antiques/background.jpg");
+		background-repeat: repeat-y;
+		background-size: 100%;
+		font-family: 'Cinzel', serif;
 		text-align: center;
 
-		a {
-			color: white;
+		.topnav {
+			font-size: 16px;
+			line-height: 20px;
+			text-align: center;
+
+			a {
+				color: white;
+			};
+
+			a:hover {
+				color: white;
+			};
+
+			a:visited {
+				color: white;
+			};
+
 		};
 
-		a:hover {
-			color: white;
+		#admin {
+
+			color: black;
+
+			a {
+				color: red;
+			};
+
+			a:hover {
+				color: red;
+			};
+
+			a:visited {
+				color: red;
+			};
+
 		};
 
-		a:visited {
-			color: white;
-		};
-
-	};
-
-	#admin {
-
-		color: black;
-
-		a {
-			color: red;
-		};
-
-		a:hover {
-			color: red;
-		};
-
-		a:visited {
-			color: red;
-		};
-
-	};
-};
-
-#header {
-	width: 100%;
-	border: 0;
-	background-color: $bg-color;
-	position: absolute;
-	top: 0;
-
-	h1 {
-		line-height: 50px;
-		font-size: 48px;
-		letter-spacing: 0.2em;
-	};
-
-	h3 { 
-		line-height: 20px;
-		font-size: 20px;
-		color: red;
-		letter-spacing: 0.2em;
-	};
-
-};
-
-#user-list {
-	width: 50%;
-	min-height: 200px;
-	margin-top: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px 20px;
-	text-align: center;
-	color: black;
-	background-color: $bg-color;
-
-	h3 {
-		color: red;
-		letter-spacing: 0.1em;
-	};
-
-	table {
-		width: 90%;
-		margin-top: 20px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: left;
-
-		th {
-			font-size: 15px;
+		#header {
+			width: 100%;
+			border: 0;
+			background-color: $bg-color;
+			position: absolute;
+			top: 0;
 			border-bottom: solid black 1px;
-			padding-bottom: 5px;
+
+			h1 {
+				line-height: 50px;
+				font-size: 48px;
+				font-size: 7vw;
+				letter-spacing: 0.2em;
+			};
+
+			h3 { 
+				line-height: 20px;
+				font-size: 20px;
+				color: red;
+				letter-spacing: 0.2em;
+			};
+
 		};
 
-		tr {
-		 margin-top: 10px;
+		#user-list {
+			width: 90%;
+			min-height: 200px;
+			margin-top: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px 20px;
+			text-align: center;
+			color: black;
+			background-color: $bg-color;
+			border: solid black 1px;
+			overflow-x: scroll;
+
+			h3 {
+				color: red;
+				letter-spacing: 0.1em;
+			};
+
+			table {
+				width: 90%;
+				margin-top: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: left;
+				padding: 5px;
+
+				th {
+					font-size: 15px;
+					border-bottom: solid black 1px;
+					padding-bottom: 5px;
+				};
+
+				tr {
+				 margin-top: 10px;
+				};
+
+				td {
+					padding: 2px;
+					white-space: nowrap;
+				};
+
+			};
+		};
+
+		#new-user-form {
+			width: 90%;
+			height: 350px;
+			margin-top: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px 50px;
+			text-align: left;
+			color: black;
+			background-color: $bg-color;
+			border: solid black 1px;
+
+			#submit {
+				margin-top: 15px;
+				text-align: center;
+			};
+
+			label {
+				width: 35%;
+				text-align: right;
+				margin-top: 10px;
+				margin-right: 10px;
+			};
+
+			input[type=text] {
+				width: 60%;
+				margin-top: 10px;
+				text-align: left;
+				font-family: 'Courier';
+			};
+
+			input[type=text].short {
+				width: 30%;
+				margin-top: 5px;
+				font-family: 'Courier';
+			};
+
+			input[type=radiobutton] {
+				width: 10px;
+				margin-top: 5px;
+			};
+
+			.short {
+				width: 30px;
+			};	
+
+		};
+
+		.user-form {
+			width: 90%;
+			height: 250px;
+			margin-top: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px 50px;
+			text-align: left;
+			color: black;
+			background-color: $bg-color;
+			border: solid black 1px;
+
+			#submit {
+				margin-top: 15px;
+				text-align: center;
+			};
+
+			label {
+				width: 35%;
+				text-align: right;
+				margin-top: 10px;
+				margin-right: 10px;
+			};
+
+			input[type=text] {
+				width: 60%;
+				margin-top: 10px;
+				text-align: left;
+				font-family: 'Courier';
+			};
+
+			input[type=text].short {
+				width: 30%;
+				margin-top: 5px;
+				font-family: 'Courier';
+			};
+
+			input[type=radiobutton] {
+				width: 10px;
+				margin-top: 5px;
+			};
+
+			.short {
+				width: 30px;
+			};	
+
+			.delete {
+				float: right;
+				color: red;
+				margin-top: -24px;
+				margin-right: 0;
+			};
+
+		};
+
+		.change-password {
+			width: 90%;
+			height: 160px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			padding: 10px 50px;
+			text-align: left;
+			color: black;
+			background-color: $bg-color;
+			border: solid black 1px;
+
+			#submit {
+				margin-top: 15px;
+				text-align: center;
+			};
+
+			label {
+				width: 35%;
+				text-align: right;
+				margin-top: 10px;
+				margin-right: 5px;
+			};
+
+			input[type=text] {
+				width: 60%;
+				margin-top: 10px;
+				text-align: left;
+				font-family: 'Courier';
+			};
+
+			input[type=text].short {
+				width: 30%;
+				margin-top: 5px;
+				font-family: 'Courier';
+			};
+
+			#message {
+				font-size: 12px;
+				text-align: center;
+				font-family: 'Courier';
+				color: red;
+			}
+
 		};
 
 	};
-};
 
-#new-user-form {
-	width: 40%;
-	height: 350px;
-	margin-top: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px 50px;
-	text-align: left;
-	color: black;
-	background-color: $bg-color;
+	/*=======================================================================*/
 
-	#submit {
-		margin-top: 15px;
-		text-align: center;
+	@media (min-width: 500px) {
+
+		#header {
+			h1 {
+				font-size: 48px;
+			};
+		};
+
+		#user-list {
+			width: 50%;
+		};
+
+		#new-user-form {
+			width: 40%;
+		};
+
+		.user-form {
+			width: 40%;
+
+			.delete {
+				margin-right: 40px;
+			};
+
+		};
+
+		.change-password {
+			width: 40%;
+		};
+
 	};
-
-	label {
-		width: 30%;
-		text-align: right;
-		margin-top: 10px;
-		margin-right: 5px;
-	};
-
-	input[type=text] {
-		width: 60%;
-		margin-top: 10px;
-		text-align: left;
-		font-family: 'Courier';
-	};
-
-	input[type=text].short {
-		width: 30%;
-		margin-top: 5px;
-		font-family: 'Courier';
-	};
-
-	input[type=radiobutton] {
-		width: 10px;
-		margin-top: 5px;
-	};
-
-	.short {
-		width: 30px;
-	};	
-
-};
-
-.user-form {
-	width: 40%;
-	height: 250px;
-	margin-top: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px 50px;
-	text-align: left;
-	color: black;
-	background-color: $bg-color;
-
-	#submit {
-		margin-top: 15px;
-		text-align: center;
-	};
-
-	label {
-		width: 30%;
-		text-align: right;
-		margin-top: 10px;
-		margin-right: 5px;
-	};
-
-	input[type=text] {
-		width: 60%;
-		margin-top: 10px;
-		text-align: left;
-		font-family: 'Courier';
-	};
-
-	input[type=text].short {
-		width: 30%;
-		margin-top: 5px;
-		font-family: 'Courier';
-	};
-
-	input[type=radiobutton] {
-		width: 10px;
-		margin-top: 5px;
-	};
-
-	.short {
-		width: 30px;
-	};	
-
-	.delete {
-		float: right;
-		color: red;
-		margin-top: -24px;
-		margin-right: 40px;
-	}
-
-};
-
-.change-password {
-	width: 40%;
-	height: 160px;
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 20px;
-	padding: 10px 50px;
-	text-align: left;
-	color: black;
-	background-color: $bg-color;
-
-	#submit {
-		margin-top: 15px;
-		text-align: center;
-	};
-
-	label {
-		width: 50%;
-		text-align: right;
-		margin-top: 10px;
-		margin-right: 5px;
-	};
-
-	input[type=text] {
-		width: 40%;
-		margin-top: 10px;
-		text-align: left;
-		font-family: 'Courier';
-	};
-
-	input[type=text].short {
-		width: 30%;
-		margin-top: 5px;
-		font-family: 'Courier';
-	};
-
-	#message {
-		font-size: 12px;
-		text-align: center;
-		font-family: 'Courier';
-		color: red;
-	}
 
 };

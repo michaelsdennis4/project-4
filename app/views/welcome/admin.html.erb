@@ -118,7 +118,8 @@
 		<br>
 		<form action="/items" method="get" id="find-item">
 			<label for="code">Find Item by Code:</label>
-			<input type="text" name="code" placeholder="Enter an item code..."/>
+			<input type="text" name="code" placeholder="Enter an item code..."/><br>
+			<br>
 			<input type="submit" value="Find"/>
 			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 		</form>	

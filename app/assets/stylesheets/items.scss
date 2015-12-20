@@ -1,4 +1,5 @@
 $bg-color: rgba(255,255,255,0.9);
+$bg-color-red: rgba(255,200,200,0.5);
 
 body.item {
 
@@ -47,6 +48,16 @@ body.item {
 			letter-spacing: 0.2em;
 		};
 
+		h2 {
+			font-size: 36px;
+			font-size: 6vw;
+		}
+
+		h4 {
+			font-size: 20px;
+			font-size: 4vw;
+		}
+
 		hr {
 			border: solid black 1px;
 		};
@@ -60,26 +71,33 @@ body.item {
 
 		.preview {
 			width: 90%;
-			height: 400px;
 			margin-top: 40px;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 10px;
+
+			h4 {
+				font-size: 14px;
+			};
+
 		};
 
 		.thumb {
-			width: 200px;
-			height: 200px;
-			margin-left: auto;
-			margin-right: auto;
+			width: 90%;
 
 			img {
+				display: block;
+    		max-width: 100%;
+    		max-height: 400px;
+    		width: auto;
+    		height: auto;
 				border: solid black 1px;
 			};
+
 		};
 
 		.no-image {
-			width: 40%;
+			width: 90%;
 			height: 400px;
 			line-height: 400px;
 			display: block;
@@ -92,10 +110,10 @@ body.item {
 
 		.blurb {
 			float: left;
-			width: 50%;
-			height: 400px;
+			width: 90%;
 			text-align: left;
-			oveflow: scroll;
+			margin-bottom: 20px;
+			border-bottom: solid black 1px;
 
 			a {
 				color: red;
@@ -127,27 +145,28 @@ body.item {
 				margin-right: 5px;
 				border: solid red 1px;
 			};
+
 		};
 
 		.item-form {
-			width: 40%;
-			height: 500px;
+			width: 90%;
 			margin-top: 20px;
 			margin-left: auto;
 			margin-right: auto;
+			margin-bottom: 20px;
 			text-align: left;	
 			border: solid black 1px;
+			background-color: $bg-color-red;
 			padding: 10px;
 
 			label {
-				width: 25%;
+				width: 100%;
+				text-align: left;
+				font-size: 14px;
+				font-size: 3vw;
 				color: red;
-				height: 25px;
-				line-height: 25px;
-				float: left;
 				margin-bottom: 10px;
-				margin-right: 5px;
-				text-align: right;
+				margin-right: 5px;	
 			};
 
 			label.short {
@@ -159,21 +178,14 @@ body.item {
 				text-align: left;
 			};	
 
-			label.large {
-				height: 100px;
-			};
-
 			input[type=text] {
-				width: 73%;
-				height: 25px;
-				float: left;
+				width: 100%;
 				margin-bottom: 10px;
 				font-family: 'Courier';
 			};
 
 			textarea {
-				width: 73%;
-				float: left;
+				width: 100%;
 				height: 100px;
 				multiline: true;
 				margin-bottom: 10px;
@@ -181,18 +193,14 @@ body.item {
 			};
 
 			input[type=text].short {
-				width: 30%;
-				float: left;
-				margin-right: 43%;
+				width: 50%;
 				margin-bottom: 10px;
 				font-family: 'Courier';
 			};
 
 			input[type=date] {
-				width: 30%;
-				float: left;
+				width: 50%;
 				height: 25px;
-				margin-right: 43%;
 				margin-bottom: 10px;
 				font-family: 'Courier';
 			};
@@ -200,37 +208,22 @@ body.item {
 			input[type=radio] {
 				width: 20px;
 				line-height: 10px;
-				float: left;
 				margin-bottom: 10px;
 			};
 
-			#submit {
+			/*#submit {
 				width: 100%;
 				height: 40px;
-				float: left;
 				margin-top: 5px;
 				padding: 0;
 				text-align: center;
-			};
+			};*/
 
-			input[type=submit] {
+			/*input[type=submit] {
 				margin-top: 5px;
 				text-align: center;
 				width: 75px;
 			};
-
-		};
-
-		.edit-item-form {
-			width: 40%;
-			height: 500px;
-			float: left;
-			margin-top: 20px;
-			margin-left: 100px;
-			margin-right: 0;
-			text-align: left;	
-			border: solid black 1px;
-			padding: 10px;
 
 			input[type=submit].delete {
 				width: 120px;
@@ -238,7 +231,17 @@ body.item {
 				color: red;
 				margin-top: -34px;
 				margin-right: 20px;
-			}
+			};*/
+
+			.submit {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				text-align: center;
+			};	
+
+			.delete {
+				color: red;
+			};
 
 		};
 
@@ -254,13 +257,14 @@ body.item {
 			}
 		}
 
-		#item-cats-keys {
-			width: 20%;
-			height: 500px;
-			float: left;
-			margin-top: 20px;
-			margin-left: 20px;
+		.item-cats-keys {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			background-color: $bg-color-red;
 			border: solid black 1px;
+			padding-bottom: 10px;
 
 			h5 {
 				color: red;
@@ -365,21 +369,98 @@ body.item {
 
 	/*=======================================================================*/
 
-	@media (min-width: 500px) {
+	@media (min-width: 1000px) {
 
 		h1.headline {
 			font-size: 48px;
 		};
 
+		h2 {
+			font-size: 36px;
+		};
+
+		h4 {
+			font-size: 20px;
+		};
+
 		.preview {
 			width: 80%;
+			height: 420px;
+			border-bottom: 20px;
+			border-bottom: solid black 1px;
+
+			h4 {
+				font-size: 20px;
+			};
+
 		};
 
 		.thumb {
-			min-width: 450px;
-			height: 400px;
-			float: left;
+			width: 40%;
 			margin-right: 40px;
+			float: left;
+			
+			img {	
+				display: block;
+				width: 450px;
+				height: 400px;		
+			};
+
+		};
+
+		.no-image {
+			width: 40%;
+		};
+
+		.blurb {
+			width: 50%;
+			margin-bottom: 0;
+			border-bottom: none;
+		};
+
+		.item-form {
+			width: 40%;
+
+			label {
+				width: 25%;
+				font-size: 14px;
+				text-align: right;
+			};
+
+			label.large {
+				float: left;
+				height: 100px;
+			};
+
+			input[type=text] {
+				width: 73%;
+			};
+
+			input[type=text].short {
+				width: 30%;
+			};
+
+			input[type=date] {
+				width: 30%;
+			};
+
+			textarea {
+				width: 73%;
+			};
+
+		};
+
+		.edit-item-form {
+			float: left;
+			margin-left: 100px;
+			margin-right: 0;
+		};
+
+		.item-cats-keys {
+			width: 20%;
+			margin-top: 20px;
+			margin-left: 20px;
+			float: left;
 		};
 
 	};

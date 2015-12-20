@@ -36,9 +36,9 @@
 			<% if (item.thumb_image_id != nil) %>
 			  <% thumb = Image.find(item.thumb_image_id) %>
 			  <% if (@category) %>
-					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.url if thumb.image_stored? %></a> 
 				<% else %>
-					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.thumb('450x400#').url if thumb.image_stored? %></a> 
+					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag thumb.image.url if thumb.image_stored? %></a> 
 				<% end %>
 			<% elsif (item.images.first) %>
 				<% if (@category) %>

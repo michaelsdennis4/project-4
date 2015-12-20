@@ -19,6 +19,8 @@
 
 	<div id="image-container">
 
+		<hr>
+
 		<% @item.images.order(:id).each_with_index do |image, i| %>
 			<div>
 				<h4>IMAGE <%= i+1 %></h4>
@@ -35,19 +37,23 @@
 					</form></div>
 				<% end %>
 
-				<div class="caption"><form action="/items/<%= @item.id %>/images/<%= image.id %>" method="post">
-					<label for="caption">CAPTION:</label>
-					<input type="text" name="caption" value="<%= image.caption %>"/>
-					<input type="submit" class="update-caption" id="item_<%= @item.id %>_img_<%= image.id %>"value="Update"/>
-					<input type="hidden" name="_method" value="patch"/>
-					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				</form></div>
+				<div class="caption">
+					<form action="/items/<%= @item.id %>/images/<%= image.id %>" method="post">
+						<label for="caption">CAPTION:</label>
+						<input type="text" name="caption" value="<%= image.caption %>"/><br>
+						<input type="submit" class="update-caption" id="item_<%= @item.id %>_img_<%= image.id %>"value="Update Caption"/>
+						<input type="hidden" name="_method" value="patch"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+				</div>
 
-				<div><form action="/items/<%= @item.id %>/images/<%= image.id %>" method="post">
-					<input type="submit" class="delete" id="item_<%= @item.id %>_img_<%= image.id %>"value="Delete Image"/>
-					<input type="hidden" name="_method" value="delete"/>
-					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-				</form></div>
+				<div class="delete-image">
+					<form action="/items/<%= @item.id %>/images/<%= image.id %>" method="post">
+						<input type="submit" class="delete" id="item_<%= @item.id %>_img_<%= image.id %>"value="Delete Image"/>
+						<input type="hidden" name="_method" value="delete"/>
+						<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+					</form>
+				</div>
 			
 				<div class="image-view">
 					<%= image_tag image.image.url if image.image_stored? %>

@@ -27,7 +27,6 @@ class ImagesController < ApplicationController
     @image = item.images.find(params[:id])
     @image[:caption] = params[:caption]
     @image.save
-    binding.pry
     render json: @image.to_json
   end
 

@@ -11,7 +11,7 @@
 		<h1>NEW USER</h1>
 	</div>
 
-	<div id="new-user-form">
+	<div class="user-form" id="new-user-form">
 
 		<%= form_for @user, url: {action: "create"} do |f| %>
 			
@@ -23,9 +23,9 @@
 			<%= f.text_field :email %><br>
 
 			<%= f.label :password %>
-	    <%= f.password_field(:password) %>
+	    <%= f.password_field(:password) %><br>
 			<%= f.label :password_confirmation %>
-			<%= f.password_field(:password_confirmation) %>   
+			<%= f.password_field(:password_confirmation) %><br>  
 
 			<%= f.label :is_admin, "Administrator?" %>
 			<%= f.radio_button(:is_admin, "true") %>
@@ -39,12 +39,13 @@
 			<%= f.radio_button(:is_active, "false") %>
 			<%= f.label(:is_active, "No", {:class => "short"}) %><br>
 			
-			<div id="submit"><%= f.submit "Create", {:class => "create-user"}  %></div>
+			<div class="submit" id="submit">
+				<%= f.submit "Create", {:class => "create-user"}  %>
+			</div>
 		<% end %>
 
 	</div>
 
 <% end %>
-
 
 </body>

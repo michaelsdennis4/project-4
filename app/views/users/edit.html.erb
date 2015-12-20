@@ -34,13 +34,15 @@
 			<%= f.radio_button(:is_active, "false") %>
 			<%= f.label(:is_active, "No", {:class => "short"}) %><br>
 			
-			<div id="submit">
+			<div class="submit" id="submit">
 				<%= f.submit "Update", {:class => "update-user"}  %>
 			</div>
 		<% end %>
 
 		<form action="/users/<%= @user.id %>" method="post">
-			<input type="submit" class="delete" id="user_<%= @user.id %>" value="DELETE USER"/>
+			<div class="submit delete">
+				<input type="submit" class="delete" id="user_<%= @user.id %>" value="DELETE USER"/>
+			</div>
 			<input type="hidden" name="_method" value="delete"/>
 			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 		</form>
@@ -54,11 +56,11 @@
 		  <%= hidden_field(:user, :email, :value => @user.email) %>
 
 				<%= f.label :old_password %>
-			  <%= f.password_field(:old_password, :class => "pass") %>
+			  <%= f.password_field(:old_password, :class => "pass") %><br>
 		    <%= f.label :new_password %>
-		    <%= f.password_field(:new_password, :class => "newpass") %>
+		    <%= f.password_field(:new_password, :class => "newpass") %><br>
 		  
-	    	<div id="submit">
+	    	<div class="submit" id="submit">
 	    		<%= f.submit "Change Password", {:class => "new-password"}  %>
 	    	</div>
 

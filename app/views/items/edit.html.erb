@@ -16,35 +16,39 @@
 		<%= form_for @item, url: {action: "update"} do |f| %>
 			
 			<%= f.label :code, "Code" %>
-			<%= f.text_field :code %>
+			<%= f.text_field :code %><br>
 			<%= f.label :caption, "Caption" %>
-			<%= f.text_field :caption %>
+			<%= f.text_field :caption %><br>
 			<%= f.label :condition, "Condition" %>
-			<%= f.text_field :condition %>
+			<%= f.text_field :condition %><br>
 			<%= f.label :measurements, "Measurements" %>
-			<%= f.text_field :measurements %>
+			<%= f.text_field :measurements %><br>
 			<%= f.label :date_acquired, "Date Acquired" %>
-			<%= f.date_field :date_acquired %>
+			<%= f.date_field :date_acquired %><br>
 			<%= f.label :date_sold, "Date Sold" %>
-			<%= f.date_field :date_sold %>
+			<%= f.date_field :date_sold %><br>
 			<%= f.label :purchase_price, "Purchase Price" %>
-			<%= f.text_field :purchase_price, {:class => "short"} %>
+			<%= f.text_field :purchase_price, {:class => "short"} %><br>
 			<%= f.label :selling_price, "Selling Price" %>
-			<%= f.text_field :selling_price, {:class => "short"} %>
+			<%= f.text_field :selling_price, {:class => "short"} %><br>
 			<%= f.label :description, "Description", {:class => "large"} %>
-			<%= f.text_area :description %>
+			<%= f.text_area :description %><br>
 
 			<%= f.label :is_available, "Item Available?" %>
 			<%= f.radio_button(:is_available, "true") %>
 			<%= f.label(:is_available, "Yes", {:class => "very_short"}) %>
 			<%= f.radio_button(:is_available, "false") %>
-			<%= f.label(:is_available, "No", {:class => "very_short"}) %>
+			<%= f.label(:is_available, "No", {:class => "very_short"}) %><br>
 				
-			<div id="submit"><%= f.submit "Update", {:class => "update-item"}  %></div>
+			<div class="submit" id="submit">
+				<%= f.submit "Update", {:class => "update-item"}  %>
+			</div>
 		<% end %>
 
 		<form action="/items/<%= @item.id %>" method="post">
-			<input type="submit" class="delete" id="item_<%= @item.id %>" value="DELETE ITEM"/>
+			<div class="submit delete">
+				<input type="submit" class="delete" id="item_<%= @item.id %>" value="DELETE ITEM"/>
+			</div>
 			<input type="hidden" name="_method" value="delete"/>
 			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 		</form>
@@ -53,7 +57,7 @@
 
 	</div>
 
-	<div id="item-cats-keys">
+	<div class="item-cats-keys">
 		<h5>CATEGORIES</h5>
 
 		<form action="" method="post">
@@ -74,7 +78,7 @@
 
 	</div>
 
-	<div id="item-cats-keys">
+	<div class="item-cats-keys">
 		<h5>KEYWORDS</h5>
 
 		<form action="" method="post">

@@ -1,4 +1,5 @@
 $bg-color: rgba(255,255,255,0.9);
+$bg-color-red: rgba(255,200,200,0.5);
 
 body.users {
 
@@ -89,6 +90,18 @@ body.users {
 				letter-spacing: 0.1em;
 			};
 
+			a {
+				color: red;
+			};
+
+			a:hover {
+				color: red;
+			};
+
+			a:visited {
+				color: red;
+			};
+
 			table {
 				width: 90%;
 				margin-top: 20px;
@@ -115,57 +128,8 @@ body.users {
 			};
 		};
 
-		#new-user-form {
-			width: 90%;
-			height: 350px;
-			margin-top: 200px;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 10px 50px;
-			text-align: left;
-			color: black;
-			background-color: $bg-color;
-			border: solid black 1px;
-
-			#submit {
-				margin-top: 15px;
-				text-align: center;
-			};
-
-			label {
-				width: 35%;
-				text-align: right;
-				margin-top: 10px;
-				margin-right: 10px;
-			};
-
-			input[type=text] {
-				width: 60%;
-				margin-top: 10px;
-				text-align: left;
-				font-family: 'Courier';
-			};
-
-			input[type=text].short {
-				width: 30%;
-				margin-top: 5px;
-				font-family: 'Courier';
-			};
-
-			input[type=radiobutton] {
-				width: 10px;
-				margin-top: 5px;
-			};
-
-			.short {
-				width: 30px;
-			};	
-
-		};
-
 		.user-form {
 			width: 90%;
-			height: 250px;
 			margin-top: 200px;
 			margin-left: auto;
 			margin-right: auto;
@@ -175,52 +139,54 @@ body.users {
 			background-color: $bg-color;
 			border: solid black 1px;
 
-			#submit {
-				margin-top: 15px;
-				text-align: center;
-			};
-
 			label {
-				width: 35%;
-				text-align: right;
+				width: 100%;
+				text-align: left;
+				font-size: 12px;
+				font-size: 3vw;
+				color: red;
 				margin-top: 10px;
 				margin-right: 10px;
 			};
 
 			input[type=text] {
-				width: 60%;
-				margin-top: 10px;
+				width: 100%;
+				margin-top: 0;
+				margin-left: auto;
+				margin-right: auto;
 				text-align: left;
 				font-family: 'Courier';
 			};
 
 			input[type=text].short {
-				width: 30%;
-				margin-top: 5px;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
 				font-family: 'Courier';
 			};
 
 			input[type=radiobutton] {
 				width: 10px;
-				margin-top: 5px;
 			};
 
 			.short {
 				width: 30px;
+			};
+
+			.submit {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				text-align: center;
 			};	
 
 			.delete {
-				float: right;
 				color: red;
-				margin-top: -24px;
-				margin-right: 0;
 			};
 
 		};
 
 		.change-password {
 			width: 90%;
-			height: 160px;
 			margin-top: 20px;
 			margin-left: auto;
 			margin-right: auto;
@@ -237,8 +203,11 @@ body.users {
 			};
 
 			label {
-				width: 35%;
-				text-align: right;
+				width: 100%;
+				text-align: left;
+				font-size: 12px;
+				font-size: 3vw;
+				color: red;
 				margin-top: 10px;
 				margin-right: 5px;
 			};
@@ -269,7 +238,7 @@ body.users {
 
 	/*=======================================================================*/
 
-	@media (min-width: 500px) {
+	@media (min-width: 1000px) {
 
 		#header {
 			h1 {
@@ -281,21 +250,43 @@ body.users {
 			width: 50%;
 		};
 
-		#new-user-form {
-			width: 40%;
-		};
-
 		.user-form {
 			width: 40%;
 
-			.delete {
-				margin-right: 40px;
+			label {
+				width: 35%;
+				text-align: right;
+				font-size: 14px;
+			};
+
+			input[type=text] {
+				width: 60%;
+				margin-top: 10px;
+				text-align: left;
+				font-family: 'Courier';
+			};
+
+			input[type=text].short {
+				width: 30%;
+				margin-top: 5px;
+				font-family: 'Courier';
+			};
+
+			input[type=radiobutton] {
+				width: 10px;
+				margin-top: 5px;
 			};
 
 		};
 
 		.change-password {
 			width: 40%;
+
+			label {
+				width: 35%;
+				text-align: right;
+				font-size: 14px;
+			}
 		};
 
 	};

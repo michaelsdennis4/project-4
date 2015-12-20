@@ -1,8 +1,11 @@
+$bg-color-red: rgba(255,200,200,0.5);
+
 .carousel-inner .item img {
 	margin: 0 auto;
 };
 
 body.image {
+
 	background: none;
 	font-family: 'Cinzel', serif;
 	text-align: center;
@@ -24,32 +27,10 @@ body.image {
 			color: red;
 		};
 	};
-};
 
-a {
-	color: red;
-};
-
-a:hover {
-	color: red;
-};
-
-a:visited {
-	color: red;
-};
-
-h1.headline {
-	margin-top: 30px;
-	line-height: 50px;
-	font-size: 48px;
-	letter-spacing: 0.2em;
-};
-
-#image-container {
-	width: 90%;
-	margin-top: 40px;
-	margin-left: auto;
-	margin-right: auto;
+	hr {
+		border: solid black 1px;
+	};
 
 	a {
 		color: red;
@@ -63,90 +44,168 @@ h1.headline {
 		color: red;
 	};
 
-	h4 {
-		color: red;
-		letter-spacing: 0.1em;
-		text-align: center;
+	h1.headline {
+		margin-top: 30px;
+		line-height: 50px;
+		font-size: 48px;
+		font-size: 7vw;
+		letter-spacing: 0.2em;
 	};
 
-	.caption {
-		width: 100%;
-		text-align: left;
-	};
-
-	input[type=text] {
-		font-family: 'Courier';
-		width: 1000px;
-	};
-
-	input[type=submit].delete {
-		display: inline-block;
-		float: right;
-		color: red;
-		margin-top: -27px;
-	};
-
-	.change-thumb {
-		width: 100%;
-		float: left;
+	#image-container {
+		width: 90%;
+		margin-top: 40px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 10px;	
-		text-align: center;
 
-		.set-thumb {
-			display: inline-block;
-			width: 160px;
+		a {
+			color: red;
+		};
+
+		a:hover {
+			color: red;
+		};
+
+		a:visited {
+			color: red;
+		};
+
+		h4 {
+			color: red;
+			letter-spacing: 0.1em;
+			text-align: center;
+		};
+
+		.caption {
+			width: 100%;
+			text-align: left;
+
+			label {
+				width: 100%;
+				color: red;
+			};
+
+			input[type=text] {
+				font-family: 'Courier';
+				width: 100%;
+				margin-bottom: 10px;
+			};
+
+		};
+
+		.delete-image {
+			width: 100%;
+			float: left;
+			text-align: left;
+			color: red;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		};
+
+		.change-thumb {
+			width: 100%;
+			float: left;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 10px;	
+			text-align: center;
+
+			.set-thumb {
+				display: inline-block;
+				width: 160px;
+			};
+
 		};
 
 	};
 
-};
-
-.image-view {
-	max-width: 100%;
-	float: center;
-	margin-top: 5px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 50px;
-	background-color: rgba(200,200,200,1);
-	border: solid black 1px;
-	overflow: scroll;
-};
-
-#upload {
-	width: 50%;
-	float: center;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	border: solid black 1px;
-	padding: 10px;
-
-	input[type=file] {
-		width: 40%;
+	.image-view {
+		max-width: 100%;
 		float: center;
+		margin-top: 5px;
 		margin-left: auto;
 		margin-right: auto;
-		font-family: 'Courier';
-		text-align: center;
-		margin-top: 20px;
+		margin-bottom: 50px;
+		background-color: rgba(200,200,200,1);
+		border: solid black 1px;
+		overflow: scroll;
+
+		img {
+			display: block;
+  		max-width: 100%;
+  		width: auto;
+  		height: auto;
+			border: solid black 1px;
+		};
+
 	};
 
-	input[type=text] {
+	.upload {
 		width: 90%;
-		font-family: 'Courier';
-		text-align: left;
-		margin-top: 20px;
+		float: center;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		border: solid black 1px;
+		background-color: $bg-color-red;
+		padding: 10px;
+
+		input[type=file] {
+			width: 40%;
+			float: center;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			font-family: 'Courier';
+			text-align: center;
+			margin-top: 20px;
+		};
+
+		label {
+			color: red;
+		};
+
+		input[type=text] {
+			width: 90%;
+			font-family: 'Courier';
+			text-align: left;
+			margin-top: 0;
+		};
+
+		input[type=submit] {
+			margin-top: 20px;
+		};
+
+		.file-upload {
+			margin-bottom: 20px;
+		};
+
 	};
 
-	input[type=submit] {
-		margin-top: 20px;
-	};
+	/*=======================================================================*/
 
-	.file-upload {
-		margin-bottom: 20px;
+	@media (min-width: 1000px) {
+
+		h1.headline {
+			font-size: 48px;
+		};
+
+		#image-container {
+
+			.caption {
+
+				input[type=text] {
+					width: 60%;
+				};
+
+			};
+
+		};
+
+		.upload {
+			width: 50%;
+		};
+
 	};
 
 };

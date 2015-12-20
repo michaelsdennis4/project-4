@@ -97,50 +97,6 @@ body.welcome {
 
 		};
 
-		/*#keywords {
-			width: 20%;
-			min-width: 200px;
-			height: 440px;
-			float: right;
-			margin-top: 170px;
-			margin-right: 16%;
-			background-color: $bg-color;
-			text-align: center;
-
-			h5 {
-				text-align: center;
-				line-height: 40px;
-				font-size: 16px;
-				color: red;
-				font-weight: 700;
-				letter-spacing: 0.075em;
-			};
-
-			#key-list {
-				width: 90%;
-				text-align: left;
-				margin-left: auto;
-				margin-right: auto;
-				height: 320px;
-				overflow: scroll;
-			};
-
-			input[type=checkbox] {
-				margin-left: 20%;
-				text-align: left;
-				height: 16px;
-			};
-			
-			input[type=submit] {
-				text-align: center;
-				margin-top: 20px;
-				margin-bottom: 20px;
-				color: black;
-				width: 30%;
-			};
-
-		};*/
-
 		#footer {
 			width: 100%;
 			min-height: 40px;
@@ -275,7 +231,7 @@ body.welcome {
 
 /*=======================================================================*/
 
-	@media (min-width: 500px) {
+	@media (min-width: 1000px) {
 
 		#categories {
 			width: 20%;

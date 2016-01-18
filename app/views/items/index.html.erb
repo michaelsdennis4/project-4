@@ -42,9 +42,9 @@
 				<% end %>
 			<% elsif (item.images.first) %>
 				<% if (@category) %>
-					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('x400#').url if item.images.first.image_stored? %></a> 
+					<a href="/categories/<%= @category.id %>/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('x400').url if item.images.first.image_stored? %></a> 
 				<% else %>
-					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('x400#').url if item.images.first.image_stored? %></a> 
+					<a href="/items/<%= item.id %>" class="thumb"><%= image_tag item.images.first.image.thumb('x400').url if item.images.first.image_stored? %></a> 
 				<% end %>
 			<% else %>
 				<div class="no-image">NO IMAGE</div>
